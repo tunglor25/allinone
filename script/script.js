@@ -514,7 +514,7 @@ function checkMilestone(oldCount, newCount) {
       const milestoneText = formatNumberCompact(milestone);
       showMilestoneCelebration(
         milestoneText,
-        `ĐẠT MỐC ${milestoneText} NGƯỜI DÙNG! 🚀`
+        `ĐẠT MỐC ${milestoneText} NGƯỜI DÙNG!`
       );
       break;
     }
@@ -734,7 +734,7 @@ const SecurityManager = {
                 </p>
                 <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem;">
                     <p style="color: #cbd5e1; font-size: 0.8rem; margin: 0;">
-                        🔒 Hệ thống bảo mật tự động kích hoạt
+                        Hệ thống bảo mật tự động kích hoạt
                     </p>
                 </div>
                 <button onclick="SecurityManager.closeCurrentAlert()" 
@@ -754,7 +754,7 @@ const SecurityManager = {
             this.closeCurrentAlert();
         }, 6000);
 
-        console.info("🔒 Security Alert:", message);
+        console.info("Security Alert:", message);
     },
 
     closeCurrentAlert() {
@@ -855,7 +855,7 @@ class RightClickBlocker {
     handleContextMenu(e) {
         e.preventDefault();
         e.stopPropagation();
-        SecurityManager.showAlert('🚫 Chuột phải đã bị vô hiệu hóa để bảo vệ nội dung hệ thống.');
+        SecurityManager.showAlert('Chuột phải đã bị vô hiệu hóa để bảo vệ nội dung hệ thống.');
         return false;
     }
     
@@ -875,7 +875,7 @@ class RightClickBlocker {
                 (e.ctrlKey && e.shiftKey && e.key === 'I')) {
                 e.preventDefault();
                 e.stopPropagation();
-                SecurityManager.showAlert('🚫 Phím tắt này đã bị vô hiệu hóa.');
+                SecurityManager.showAlert('Phím tắt này đã bị vô hiệu hóa.');
                 return false;
             }
         });
@@ -890,7 +890,7 @@ class RightClickBlocker {
             touchTimer = setTimeout(() => {
                 // Long press detected
                 e.preventDefault();
-                SecurityManager.showAlert('🚫 Nhấn giữ đã bị vô hiệu hóa.');
+                SecurityManager.showAlert('Nhấn giữ đã bị vô hiệu hóa.');
             }, 500);
         }, { passive: false });
         
@@ -915,7 +915,7 @@ class RightClickBlocker {
                 (e.ctrlKey && e.key === 'u')) {
                 e.preventDefault();
                 e.stopPropagation();
-                SecurityManager.showAlert('🚫 Công cụ developer không được phép sử dụng.');
+                SecurityManager.showAlert('Công cụ developer không được phép sử dụng.');
                 return false;
             }
         });
@@ -1121,7 +1121,7 @@ function addSecurityWatermark() {
         pointer-events: none;
         user-select: none;
     `;
-    watermark.textContent = '🔒 TungLor Security v2.5';
+    watermark.textContent = 'TungLor Security v2.5';
     document.body.appendChild(watermark);
 }
 
@@ -1144,7 +1144,7 @@ function initializeSecurity() {
     if (window.securityInitialized) return;
     window.securityInitialized = true;
     
-    console.log('🛡️ Initializing Security System...');
+    console.log('Initializing Security System...');
     
     // Khởi tạo Right Click Blocker
     rightClickBlocker = new RightClickBlocker();
