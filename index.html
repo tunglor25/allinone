@@ -2,248 +2,502 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <title>🌟 All-In-One Premium Unlock - Phiên Bản Hoàn Thiện</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Shadow Rocket Ultimate - Premium Unlock</title>
+    <meta
+      name="description"
+      content="Unlock YouTube Premium, Spotify, TikTok, SoundCloud, PicsArt Gold, CapCut Pro và nhiều hơn nữa"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="icon" href="assets/icon.png" type="image/png" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+  <script>
+    // Redirect to loading page nếu chưa xem loading
+    if (
+      !sessionStorage.getItem("loadingShown") &&
+      !window.location.hash.includes("skip-loading")
+    ) {
+      window.location.href = "loading.html";
+      throw new Error("Redirecting to loading..."); // Dừng execution ngay lập tức
+    }
+
+    // Clean up sau khi đã load xong
+    window.addEventListener("load", function () {
+      // Có thể thêm logic clean up ở đây nếu cần
+    });
+  </script>
   <body>
-    <!-- Floating platform logos -->
-    <i class="floating-logo youtube fab fa-youtube"></i>
-    <i class="floating-logo spotify fab fa-spotify"></i>
-    <i class="floating-logo locket fas fa-lock"></i>
-    <i
-      class="floating-logo bilibili fas fa-brands fa-bilibili fa-beat"
-      style="color: #74c0fc"
-    ></i>
-
-    <div class="container">
-      <div class="logo">
-        <i class="fas fa-rocket"></i>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+      <div class="app-icon youtube">
+        <i class="fab fa-youtube"></i>
       </div>
-      <h1>All-In-One Premium Unlock</h1>
-      <p class="subtitle">
-        Chặn quảng cáo và mở khóa tính năng Premium cho YouTube, Spotify,
-        Bilibili, Locket và nhiều hơn nữa
-      </p>
-
-      <div class="features">
-        <div class="feature premium">
-          <i class="fas fa-ad"></i>
-          <h3>Chặn Quảng Cáo</h3>
-          <p>Loại bỏ tất cả quảng cáo khó chịu trên mọi nền tảng</p>
-        </div>
-        <div class="feature premium">
-          <i class="fas fa-unlock"></i>
-          <h3>Mở Khóa Premium</h3>
-          <p>Truy cập tính năng cao cấp miễn phí vĩnh viễn</p>
-        </div>
-        <div class="feature">
-          <i class="fas fa-sync"></i>
-          <h3>Tự Động Cập Nhật</h3>
-          <p>Luôn có phiên bản mới nhất tự động</p>
-        </div>
-        <div class="feature">
-          <i class="fas fa-shield-alt"></i>
-          <h3>Bảo Mật</h3>
-          <p>Không thu thập dữ liệu cá nhân</p>
-        </div>
-        <div class="feature">
-          <i class="fas fa-laptop-code"></i>
-          <h3>Đa nền tảng</h3>
-          <p>Hỗ trợ nhiều ứng dụng trên mọi thiết bị và hệ điều hành.</p>
-        </div>
-        <div class="feature">
-          <i class="fas fa-mouse-pointer"></i>
-          <h3>Dễ dàng sử dụng</h3>
-          <p>
-            Giao diện thân thiện, dễ thao tác ngay cả với người mới bắt đầu.
-          </p>
-        </div>
+      <div class="app-icon spotify">
+        <i class="fab fa-spotify"></i>
       </div>
-
-      <button id="downloadBtn" class="brutalist-button">
-        <div class="shadowrocket-logo"></div>
-        <div class="button-text">
-          <span>Tự động nhập vào</span>
-          <span>Ứng dụng VPN</span>
-        </div>
-      </button>
-
-      <div class="qr-section">
-        <h3>Quét QR Code để nhập cấu hình</h3>
-        <img
-          src="assets/frame.png"
-          alt="QR Code"
-          class="qr-code-img"
-          id="external-qr"
-        />
-        <button class="download-qr" id="downloadQrBtn">
-          <i class="fas fa-download"></i> Tải QR Code
-        </button>
+      <div class="app-icon tiktok">
+        <i class="fab fa-tiktok"></i>
       </div>
-
-      <div class="app-buttons">
-        <button class="app-btn" data-app="shadowrocket">
-          <i class="fas fa-rocket"></i> Shadowrocket
-        </button>
-        <button class="app-btn" data-app="quantumult">
-          <i class="fas fa-bolt"></i> Quantumult
-        </button>
-        <button class="app-btn" data-app="surge">
-          <i class="fas fa-chart-line"></i> Surge
-        </button>
-        <button class="app-btn" data-app="loon">
-          <i class="fas fa-moon"></i> Loon
-        </button>
-        <button class="app-btn" data-app="clash">
-          <i class="fas fa-shield-alt"></i> Clash
-        </button>
+      <div class="app-icon soundcloud">
+        <i class="fab fa-soundcloud"></i>
       </div>
-
-      <div class="code-container">
-        <div class="code-block" id="configUrl">
-          https://raw.githubusercontent.com/tunglor25/allinone/main/All_in_one.conf
-        </div>
+      <div class="app-icon netflix">
+        <i class="fas fa-film"></i>
+      </div>
+      <div class="app-icon discord">
+        <i class="fab fa-discord"></i>
       </div>
     </div>
+    <!-- Floating Ichos - Enhanced -->
+    <div class="floating-icons">
+      <i
+        class="floating-icon youtube fab fa-youtube"
+        data-tooltip="YouTube Premium"
+      ></i>
+      <i
+        class="floating-icon spotify fab fa-spotify"
+        data-tooltip="Spotify Premium"
+      ></i>
+      <i
+        class="floating-icon tiktok fab fa-tiktok"
+        data-tooltip="TikTok Premium"
+      ></i>
+      <i
+        class="floating-icon soundcloud fab fa-soundcloud"
+        data-tooltip="SoundCloud Premium"
+      ></i>
+      <i
+        class="floating-icon picsart fas fa-palette"
+        data-tooltip="PicsArt Gold"
+      ></i>
+      <i
+        class="floating-icon capcut fas fa-scissors"
+        data-tooltip="CapCut Pro"
+      ></i>
+      <i
+        class="floating-icon locket fas fa-lock"
+        data-tooltip="Locket Gold"
+      ></i>
+      <i
+        class="floating-icon bilibili fas fa-b"
+        data-tooltip="Bilibili No ADS"
+      ></i>
 
-    <footer>
-      © 2023 All-In-One Premium Unlock | Cập nhật lần cuối:
-      <span id="update-date"></span>
-    </footer>
+      <!-- Thêm các icon phụ trợ -->
+      <i
+        class="floating-icon instagram fab fa-instagram"
+        data-tooltip="Instagram"
+      ></i>
+      <i
+        class="floating-icon twitter fab fa-twitter"
+        data-tooltip="Twitter"
+      ></i>
+      <i
+        class="floating-icon facebook fab fa-facebook"
+        data-tooltip="Facebook"
+      ></i>
+      <i
+        class="floating-icon whatsapp fab fa-whatsapp"
+        data-tooltip="WhatsApp"
+      ></i>
+      <i
+        class="floating-icon telegram fab fa-telegram"
+        data-tooltip="Telegram"
+      ></i>
+      <i
+        class="floating-icon discord fab fa-discord"
+        data-tooltip="Discord"
+      ></i>
+    </div>
 
-    <script>
-      // Set current date
-      document.getElementById("update-date").textContent =
-        new Date().toLocaleDateString("vi-VN");
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+      <i
+        class="floating-icon youtube fab fa-youtube"
+        data-tooltip="YouTube Premium"
+      ></i>
+      <i
+        class="floating-icon spotify fab fa-spotify"
+        data-tooltip="Spotify Premium"
+      ></i>
+      <i
+        class="floating-icon tiktok fab fa-tiktok"
+        data-tooltip="TikTok Premium"
+      ></i>
+      <i
+        class="floating-icon soundcloud fab fa-soundcloud"
+        data-tooltip="SoundCloud Premium"
+      ></i>
+      <i
+        class="floating-icon picsart fas fa-palette"
+        data-tooltip="PicsArt Gold"
+      ></i>
+      <i
+        class="floating-icon capcut fas fa-scissors"
+        data-tooltip="CapCut Pro"
+      ></i>
+      <i
+        class="floating-icon locket fas fa-lock"
+        data-tooltip="Locket Gold"
+      ></i>
+    </div>
 
-      // Add slight delay to container animation for better visual effect
-      window.addEventListener("load", () => {
-        const container = document.querySelector(".container");
-        container.style.opacity = "0";
-        container.style.transform = "translateY(20px)";
-        setTimeout(() => {
-          container.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-          container.style.opacity = "1";
-          container.style.transform = "translateY(0)";
-        }, 300);
-      });
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="logo-container">
+          <div class="logo">
+            <img
+              src="https://shadowrocketvpn.com/wp-content/uploads/2023/10/shadowrocket-logo.png"
+              alt="Shadowrocket"
+              style="width: 70px; height: 70px; object-fit: contain"
+            />
+          </div>
+          <div class="title-group">
+            <h1 class="main-title">Shadow Rocket Ultimate</h1>
+            <p class="subtitle">Premium Unlock 2025</p>
+          </div>
+        </div>
 
-      // Config URL
-      const configUrl =
-        "https://raw.githubusercontent.com/tunglor25/allinone/main/All_in_one.conf";
+        <!-- Version Badge -->
+        <div class="version-badge-container">
+          <div class="badge new">
+            <span></span>
+            <span class="badge-text">NEW v2.0</span>
+          </div>
+        </div>
+        <!-- status -->
+        <div class="status-container">
+          <div class="status-online">
+            <button class="available-for-btn">
+              <div class="circle">
+                <div class="dot"></div>
+                <div class="outline"></div>
+              </div>
+              <span class="status-text">HỆ THỐNG ĐANG HOẠT ĐỘNG</span>
+            </button>
+          </div>
+        </div>
+      </header>
 
-      // Scheme các ứng dụng
-      const appSchemes = {
-        shadowrocket: "shadowrocket://add/sub?url=",
-        quantumult: "quantumult://import?url=",
-        surge: "surge:///install-config?url=",
-        loon: "loon://import?url=",
-        clash: "clash://install-config?url=",
-      };
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <i class="stat-icon fas fa-check-circle"></i>
+          <div class="stat-content">
+            <span class="stat-number">8+</span>
+            <span class="stat-label">Ứng dụng Premium</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <i class="stat-icon fas fa-sync"></i>
+          <div class="stat-content">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Auto Update</span>
+          </div>
+        </div>
+        <div class="stat-card">
+          <i class="stat-icon fas fa-shield-alt"></i>
+          <div class="stat-content">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">An toàn</span>
+          </div>
+        </div>
+      </div>
 
-      // Xử lý khi nhấn nút ứng dụng
-      document.querySelectorAll(".app-btn").forEach((btn) => {
-        btn.addEventListener("click", function () {
-          const app = this.dataset.app;
-          const scheme = appSchemes[app];
+      <!-- Features Grid -->
+      <div class="features-grid">
+        <!-- YouTube Premium -->
+        <div class="feature-card status-online" data-app="youtube">
+          <div class="feature-status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE</span>
+          </div>
+          <div class="feature-card-content">
+            <div class="feature-icon youtube">
+              <i class="fab fa-youtube"></i>
+            </div>
+            <h3>YouTube Premium</h3>
+            <p>No ADS, Background Play, PiP Mode</p>
+            <div class="feature-card-status">
+              <button class="feature-status-btn">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-          // Tạo iframe để mở ứng dụng
-          const iframe = document.createElement("iframe");
-          iframe.style.display = "none";
-          iframe.src = scheme + encodeURIComponent(configUrl);
-          document.body.appendChild(iframe);
+        <!-- Spotify Premium -->
+        <div class="feature-card status-online" data-app="spotify">
+          <div class="feature-status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE</span>
+          </div>
+          <div class="feature-card-content">
+            <div class="feature-icon spotify">
+              <i class="fab fa-spotify"></i>
+            </div>
+            <h3>Spotify Premium</h3>
+            <p>Extreme Quality, No Ads, Unlimited Skips</p>
+            <div class="feature-card-status">
+              <button class="feature-status-btn">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-          setTimeout(() => {
-            document.body.removeChild(iframe);
+        <!-- TikTok Premium -->
+        <div class="feature-card status-online" data-app="tiktok">
+          <div class="feature-status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE</span>
+          </div>
+          <div class="feature-card-content">
+            <div class="feature-icon tiktok">
+              <i class="fab fa-tiktok"></i>
+            </div>
+            <h3>TikTok Premium</h3>
+            <p>No ADS, Download Videos, Premium Effects</p>
+            <div class="feature-card-status">
+              <button class="feature-status-btn">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-            // Hiển thị thông báo nếu không mở được
-            setTimeout(() => {
-              if (!document.hidden) {
-                alert(
-                  `Không thể mở ${app}. Vui lòng cài đặt ứng dụng hoặc sử dụng QR code.`
-                );
-              }
-            }, 500);
-          }, 100);
-        });
-      });
+        <!-- SoundCloud Premium -->
+        <div class="feature-card status-online" data-app="soundcloud">
+          <div class="feature-status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE</span>
+          </div>
+          <div class="feature-card-content">
+            <div class="feature-icon soundcloud">
+              <i class="fab fa-soundcloud"></i>
+            </div>
+            <h3>SoundCloud Premium</h3>
+            <p>Offline Listening, No Ads, Full Catalog</p>
+            <div class="feature-card-status">
+              <button class="feature-status-btn">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-      // Xử lý tải QR code
-      document
-        .getElementById("downloadQrBtn")
-        .addEventListener("click", function () {
-          const qrUrl = "https://qrco.de/bg3hHn";
-          const link = document.createElement("a");
-          link.href = qrUrl;
-          link.download = "assets/frame.png";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
+        <!-- PicsArt Gold -->
+        <div class="feature-card status-online" data-app="picsart">
+          <div class="feature-status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE</span>
+          </div>
+          <div class="feature-card-content">
+            <div class="feature-icon picsart">
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/052/925/023/non_2x/picsart-logo-on-a-transparent-background-free-png.png"
+                alt="Picsart Logo"
+                style="width: 100px; height: 100px; object-fit: contain"
+              />
+            </div>
 
-          // Thông báo
-          const btn = document.getElementById("downloadQrBtn");
-          btn.innerHTML = '<i class="fas fa-check"></i> Đã tải xuống';
-          setTimeout(() => {
-            btn.innerHTML = '<i class="fas fa-download"></i> Tải QR Code';
-          }, 2000);
-        });
+            <h3>PicsArt Gold</h3>
+            <p>All Filters, No Watermark, Premium Tools</p>
+            <div class="feature-card-status">
+              <button class="feature-status-btn">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-      // Copy button
-      document.getElementById("copyBtn").addEventListener("click", function () {
-        navigator.clipboard
-          .writeText(configUrl)
-          .then(() => {
-            const copyBtn = document.getElementById("copyBtn");
-            copyBtn.innerHTML = '<i class="fas fa-check"></i> Đã copy';
-            copyBtn.style.background = "#1db954";
-            setTimeout(() => {
-              copyBtn.innerHTML = '<i class="fas fa-copy"></i> Copy';
-              copyBtn.style.background = "var(--primary)";
-            }, 2000);
-          })
-          .catch((err) => {
-            console.error("Failed to copy: ", err);
-          });
-      });
+        <!-- CapCut Pro -->
+        <div class="feature-card status-online" data-app="capcut">
+          <div class="feature-status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE</span>
+          </div>
+          <div class="feature-card-content">
+            <div class="feature-icon picsart">
+              <img
+                src="https://static.vecteezy.com/system/resources/previews/067/065/640/non_2x/capcut-logo-square-rounded-capcut-logo-capcut-logo-free-download-free-png.png"
+                alt="Picsart Logo"
+                style="width: 70px; height: 70px; object-fit: contain"
+              />
+            </div>
+            <h3>CapCut Pro</h3>
+            <p>Pro Features, No Watermark, All Templates</p>
+            <div class="feature-card-status">
+              <button class="feature-status-btn">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+              </button>
+            </div>
+          </div>
+        </div>
 
-      // Hàm kiểm tra thiết bị di động
-      function isMobile() {
-        return /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(
-          navigator.userAgent
-        );
-      }
+        <!-- Locket Gold -->
+        <div class="feature-card status-online" data-app="locket">
+          <div class="feature-status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE</span>
+          </div>
+          <div class="feature-card-content">
+            <div class="feature-icon picsart">
+              <img
+                src="https://ineqe.com/wp-content/uploads/2022/02/locket_app_icon-1024x1024.png?odnHeight=117&odnWidth=117&odnBg=FFFFFF"
+                alt="Picsart Logo"
+                style="width: 70px; height: 70px; object-fit: contain"
+              />
+            </div>
+            <h3>Locket Gold</h3>
+            <p>Premium Widgets, Unlimited Customization</p>
+            <div class="feature-card-status">
+              <button class="feature-status-btn">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Bilibili No ADS -->
+        <div class="feature-card status-online" data-app="bilibili">
+          <div class="feature-status-indicator">
+            <div class="status-dot"></div>
+            <span>LIVE</span>
+          </div>
+          <div class="feature-card-content">
+            <div class="feature-icon picsart">
+              <img
+                src="https://img.icons8.com/?size=512&id=5E24fZ9ORelo&format=png"
+                alt="Picsart Logo"
+                style="width: 70px; height: 70px; object-fit: contain"
+              />
+            </div>
+            <h3>Bilibili No ADS</h3>
+            <p>Remove All Ads, Premium Content</p>
+            <div class="feature-card-status">
+              <button class="feature-status-btn">
+                <div class="circle">
+                  <div class="dot"></div>
+                  <div class="outline"></div>
+                </div>
+                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      // Xử lý khi nhấn nút tải về chính
-      document
-        .getElementById("downloadBtn")
-        .addEventListener("click", function () {
-          if (isMobile()) {
-            // Thử mở ứng dụng đầu tiên (Shadowrocket)
-            const iframe = document.createElement("iframe");
-            iframe.style.display = "none";
-            iframe.src =
-              appSchemes.shadowrocket + encodeURIComponent(configUrl);
-            document.body.appendChild(iframe);
+      <!-- Download Section -->
+      <div class="download-section">
+        <h2 class="section-title">Cài Đặt Ngay</h2>
 
-            setTimeout(() => {
-              document.body.removeChild(iframe);
-            }, 300);
-          } else {
-            // Xử lý cho PC
-            const a = document.createElement("a");
-            a.href = configUrl;
-            a.download = "All_in_one.conf";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-          }
-        });
-    </script>
+        <!-- Main Download Button -->
+        <div class="metal-container">
+          <button id="mainDownloadBtn" class="metal-button main-download-btn">
+            <p>🚀 TẢI NGAY - SHADOW ROCKET</p>
+          </button>
+        </div>
+
+        <!-- App Buttons -->
+        <div class="app-buttons-grid">
+          <button class="app-btn shadowrocket" data-app="shadowrocket">
+            <i class="fas fa-rocket"></i>
+            <span>Shadowrocket</span>
+          </button>
+          <button class="app-btn quantumult" data-app="quantumult">
+            <i class="fas fa-bolt"></i>
+            <span>Quantumult</span>
+          </button>
+          <button class="app-btn surge" data-app="surge">
+            <i class="fas fa-chart-line"></i>
+            <span>Surge</span>
+          </button>
+          <button class="app-btn loon" data-app="loon">
+            <i class="fas fa-moon"></i>
+            <span>Loon</span>
+          </button>
+          <button class="app-btn clash" data-app="clash">
+            <i class="fas fa-shield-alt"></i>
+            <span>Clash</span>
+          </button>
+        </div>
+
+        <!-- Config URL -->
+        <div class="config-url-section">
+          <h2 class="section-title">URL Cấu Hình</h2>
+          <div class="url-container">
+            <code id="configUrl" class="config-url">
+              https://raw.githubusercontent.com/tunglor25/allinone/main/ShadowRocket_Ultimate.conf
+            </code>
+            <button id="copyUrlBtn" class="copy-btn" title="Copy URL">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-info">
+            <p>© 2024 Shadow Rocket Ultimate Premium Unlock</p>
+            <p>Cập nhật lần cuối: <span id="updateDate"></span></p>
+          </div>
+          <div class="footer-stats">
+            <span class="online-count">
+              <i class="fas fa-users"></i>
+              <span id="userCount">1,258</span> người đang online
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+      <i class="notification-icon"></i>
+      <span class="notification-text"></span>
+    </div>
+
+    <script src="script/script.js"></script>
   </body>
 </html>
