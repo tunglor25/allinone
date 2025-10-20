@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Shadow Rocket Ultimate - Premium Unlock</title>
+    <meta
+      name="description"
+      content="Unlock YouTube Premium, Spotify, TikTok, SoundCloud, PicsArt Gold, CapCut Pro và nhiều hơn nữa"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.png" type="image/png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Framework & Libraries CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/chartist@0.11.4/dist/chartist.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style_Modules.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <script>
+    if (
+      !sessionStorage.getItem("loadingShown") &&
+      !window.location.hash.includes("skip-loading")
+    ) {
+      window.location.href = "loading.html";
+      throw new Error("Redirecting to loading...");
+    }
+
+    // Clean up sau khi đã load xong
+    window.addEventListener("load", function () {
+      sessionStorage.setItem("loadingShown", true);
+    });
+  </script>
+  <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+      <div class="app-icon youtube">
+        <i class="fab fa-youtube"></i>
+      </div>
+      <div class="app-icon spotify">
+        <i class="fab fa-spotify"></i>
+      </div>
+      <div class="app-icon tiktok">
+        <i class="fab fa-tiktok"></i>
+      </div>
+      <div class="app-icon soundcloud">
+        <i class="fab fa-soundcloud"></i>
+      </div>
+      <div class="app-icon netflix">
+        <i class="fas fa-film"></i>
+      </div>
+      <div class="app-icon discord">
+        <i class="fab fa-discord"></i>
+      </div>
+    </div>
+    <!-- Floating Ichos - Enhanced -->
+    <div class="floating-icons">
+      <i
+        class="floating-icon youtube fab fa-youtube"
+        data-tooltip="YouTube Premium"
+      ></i>
+      <i
+        class="floating-icon spotify fab fa-spotify"
+        data-tooltip="Spotify Premium"
+      ></i>
+      <i
+        class="floating-icon tiktok fab fa-tiktok"
+        data-tooltip="TikTok Premium"
+      ></i>
+      <i
+        class="floating-icon soundcloud fab fa-soundcloud"
+        data-tooltip="SoundCloud Premium"
+      ></i>
+      <i
+        class="floating-icon picsart fas fa-palette"
+        data-tooltip="PicsArt Gold"
+      ></i>
+      <i
+        class="floating-icon capcut fas fa-scissors"
+        data-tooltip="CapCut Pro"
+      ></i>
+      <i
+        class="floating-icon locket fas fa-lock"
+        data-tooltip="Locket Gold"
+      ></i>
+      <i
+        class="floating-icon bilibili fas fa-b"
+        data-tooltip="Bilibili No ADS"
+      ></i>
+
+      <!-- Thêm các icon phụ trợ -->
+      <i
+        class="floating-icon instagram fab fa-instagram"
+        data-tooltip="Instagram"
+      ></i>
+      <i
+        class="floating-icon twitter fab fa-twitter"
+        data-tooltip="Twitter"
+      ></i>
+      <i
+        class="floating-icon facebook fab fa-facebook"
+        data-tooltip="Facebook"
+      ></i>
+      <i
+        class="floating-icon whatsapp fab fa-whatsapp"
+        data-tooltip="WhatsApp"
+      ></i>
+      <i
+        class="floating-icon telegram fab fa-telegram"
+        data-tooltip="Telegram"
+      ></i>
+      <i
+        class="floating-icon discord fab fa-discord"
+        data-tooltip="Discord"
+      ></i>
+    </div>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+      <i
+        class="floating-icon youtube fab fa-youtube"
+        data-tooltip="YouTube Premium"
+      ></i>
+      <i
+        class="floating-icon spotify fab fa-spotify"
+        data-tooltip="Spotify Premium"
+      ></i>
+      <i
+        class="floating-icon tiktok fab fa-tiktok"
+        data-tooltip="TikTok Premium"
+      ></i>
+      <i
+        class="floating-icon soundcloud fab fa-soundcloud"
+        data-tooltip="SoundCloud Premium"
+      ></i>
+      <i
+        class="floating-icon picsart fas fa-palette"
+        data-tooltip="PicsArt Gold"
+      ></i>
+      <i
+        class="floating-icon capcut fas fa-scissors"
+        data-tooltip="CapCut Pro"
+      ></i>
+      <i
+        class="floating-icon locket fas fa-lock"
+        data-tooltip="Locket Gold"
+      ></i>
+    </div>
+
+        <header>
+      <!-- Navigation Bar -->
+      <nav class="nav-container">
+        <div class="nav-wrapper">
+          <!-- Logo Section - Bên trái -->
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🚀</div>
+            <span class="logo-text">ThrustNet</span>
+          </a>
+
+          <!-- Desktop Navigation - Sát bên phải -->
+          <div class="nav-desktop">
+            <a href="index.html" class="nav-link active">Trang chủ</a>
+            <a href="modules.html" class="nav-link">Modules</a>
+            <a href="comingSoon.html" class="nav-link">Hỗ trợ</a>
+          </div>
+
+          <!-- Mobile Navigation Toggle - Sát bên phải -->
+          <div class="nav-mobile">
+            <button
+              class="mobile-menu-toggle"
+              id="mobileMenuToggle"
+              type="button"
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="index.html" class="mobile-nav-link active">Trang chủ</a>
+          <a href="modules.html" class="mobile-nav-link">Modules</a>
+          <a href="comingSoon.html" class="mobile-nav-link">Hỗ trợ</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="modules-hero">
+        <div class="hero-modules-content">
+          <div class="hero-logo">TN</div>
+          <h1 class="modules-title">ThrustNet Modules</h1>
+          <p class="modules-subtitle">
+            Khởi động sức mạnh số — mở khóa mọi giới hạn VPN
+          </p>
+        </div>
+      </section>
+
+      <!-- Modules Grid Section -->
+      <section class="modules-grid-section">
+        <div class="modules-container">
+          <div class="modules-grid" id="modulesGrid">
+            <!-- Các module sẽ được thêm bằng JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Tutorial Section -->
+      <section class="tutorial-section">
+        <div class="tutorial-container">
+          <h2 class="tutorial-title">Hướng dẫn Cài đặt</h2>
+          <div class="tutorial-steps">
+            <div class="tutorial-step">
+              <div class="step-number">1</div>
+              <h3 class="step-title">Cài đặt ứng dụng VPN</h3>
+              <p class="step-description">
+                Đảm bảo đã cài đặt ứng dụng VPN tương ứng (ShadowRocket,
+                Quantumult X, Surge...)
+              </p>
+            </div>
+            <div class="tutorial-step">
+              <div class="step-number">2</div>
+              <h3 class="step-title">Import Module tự động</h3>
+              <p class="step-description">
+                Nhấn nút "Cài đặt Module" để tự động import cấu hình vào ứng
+                dụng VPN
+              </p>
+            </div>
+            <div class="tutorial-step">
+              <div class="step-number">3</div>
+              <h3 class="step-title">Sao chép Link thủ công</h3>
+              <p class="step-description">
+                Hoặc sao chép link và paste vào phần cấu hình của ứng dụng VPN
+              </p>
+            </div>
+            <div class="tutorial-step">
+              <div class="step-number">4</div>
+              <h3 class="step-title">Kích hoạt Module</h3>
+              <p class="step-description">
+                Kích hoạt module trong phần Cấu hình của ứng dụng VPN để bắt đầu
+                sử dụng
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Giới thiệu -->
+          <div class="footer-section">
+            <h5>Về Chúng Tôi</h5>
+            <p class="footer-about">
+              <strong>ThrustNet</strong> là nền tảng VPN thế hệ mới, được thiết
+              kế để mở khóa, tăng tốc và bảo mật kết nối Internet trên iPhone và
+              iPad. ThrustNet mang đến sức mạnh bứt phá, giúp người dùng truy
+              cập các ứng dụng và nội dung Premium, Pro, Gold mà không bị giới
+              hạn vùng hoặc tốc độ.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Liên kết nhanh -->
+          <div class="footer-section">
+            <h5>Liên Kết Nhanh</h5>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Trang Chủ</a></li>
+              <li><a href="comingSoon.html" class="footer-link">Giới Thiệu</a></li>
+              <li><a href="modules.html" class="footer-link">Dịch Vụ</a></li>
+              <li><a href="comingSoon.html" class="footer-link">Liên Hệ</a></li>
+            </ul>
+          </div>
+
+          <!-- Dịch vụ -->
+          <div class="footer-section">
+            <h5>Dịch Vụ</h5>
+            <ul class="footer-links">
+              <li><a href="comingSoon.html" class="footer-link">Phát Triển Modules</a></li>
+              <li><a href="comingSoon.html" class="footer-link">Chạy Quảng Cáo</a></li>
+              <li><a href="comingSoon.html" class="footer-link">Phát Triển VPN</a></li>
+              <li><a href="comingSoon.html" class="footer-link">Phân Tích Dữ Liệu</a></li>
+            </ul>
+          </div>
+
+          <!-- Thông tin liên hệ -->
+          <div class="footer-section">
+            <h5>Thông Tin Liên Hệ</h5>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>FPT Polytechnic, Trịnh Văn Bô, Xuân Phương, Nam Từ Liêm, Hà Nội</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+84344122842">+84 0344122842</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:trantungvn8@gamil.com">trantungvn8@gamil.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bản quyền -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2024 ThrustNet - Dịch Vụ Mở Khóa Premium Toàn Diện.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="script/script.js"></script>
+    <script src="script/script_Modules.js"></script>
+  </body>
+</html>

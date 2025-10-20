@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Shadow Rocket Ultimate - Premium Unlock</title>
+    <meta
+      name="description"
+      content="Unlock YouTube Premium, Spotify, TikTok, SoundCloud, PicsArt Gold, CapCut Pro và nhiều hơn nữa"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.png" type="image/png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Framework & Libraries CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/chartist@0.11.4/dist/chartist.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      :root {
+        --bg-1: #0b1220;
+        --bg-2: #111827;
+        --fg: #e6edf3;
+        --muted: #9aa4b2;
+        --brand: #7c3aed;
+        --accent: #22d3ee;
+        --glass: rgba(255, 255, 255, 0.08);
+        --card: #0f1629;
+        --glow: #7c3aed55;
+      }
+      /* Palette alternative (ciclabili da JS) */
+      body.palette-aurora {
+        --bg-1: #0b1220;
+        --bg-2: #111827;
+        --brand: #7c3aed;
+        --accent: #22d3ee;
+        --card: #0f1629;
+        --glow: #7c3aed55;
+      }
+      body.palette-sunset {
+        --bg-1: #150b1a;
+        --bg-2: #1d0f2a;
+        --brand: #ff6b6b;
+        --accent: #ffd166;
+        --card: #1a1022;
+        --glow: #ff6b6b55;
+      }
+      body.palette-forest {
+        --bg-1: #0b1512;
+        --bg-2: #0f2018;
+        --brand: #34d399;
+        --accent: #60a5fa;
+        --card: #0d1b16;
+        --glow: #34d39955;
+      }
+      body.palette-ocean {
+        --bg-1: #06141f;
+        --bg-2: #0a2233;
+        --brand: #3b82f6;
+        --accent: #22d3ee;
+        --card: #0a1c29;
+        --glow: #3b82f655;
+      }
+
+      /* Resetter */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        color: var(--fg);
+        background: radial-gradient(
+            1200px 1200px at 80% -10%,
+            var(--bg-2),
+            transparent 60%
+          ),
+          linear-gradient(180deg, var(--bg-1), var(--bg-2));
+        overflow: hidden; /* per il canvas full-screen */
+      }
+
+      /* Sfondo animato morbido */
+      .bg-gradient {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -2;
+        background: radial-gradient(
+            1200px 800px at 10% 10%,
+            color-mix(in oklab, var(--brand) 40%, transparent),
+            transparent 60%
+          ),
+          radial-gradient(
+            1200px 800px at 90% 90%,
+            color-mix(in oklab, var(--accent) 40%, transparent),
+            transparent 60%
+          );
+        filter: saturate(120%);
+        animation: drift 18s ease-in-out infinite alternate;
+      }
+      @keyframes drift {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(2vw, -2vh, 0) scale(1.02);
+        }
+      }
+
+      /* Grana delicata */
+      .noise {
+        position: fixed;
+        inset: -50%;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0.06;
+        mix-blend-mode: soft-light;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' seed='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+        animation: noiseMove 12s linear infinite;
+      }
+      @keyframes noiseMove {
+        to {
+          transform: translate3d(5%, 5%, 0);
+        }
+      }
+
+      /* Canvas particelle */
+      canvas.starfield {
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+      }
+
+      /* Contenuto centrale */
+      .wrap {
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      .card {
+        width: min(900px, 92vw);
+        border-radius: 20px;
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--card) 92%, transparent),
+          color-mix(in oklab, var(--card) 88%, transparent)
+        );
+        border: 1px solid color-mix(in oklab, var(--fg) 8%, transparent);
+        box-shadow: 0 30px 120px var(--glow),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px) saturate(110%);
+        -webkit-backdrop-filter: blur(10px) saturate(110%);
+        position: relative;
+        overflow: hidden;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        pointer-events: none;
+        background: conic-gradient(
+          from 180deg at 50% 50%,
+          transparent 0 30deg,
+          color-mix(in oklab, var(--brand) 45%, transparent) 60deg,
+          transparent 120deg,
+          color-mix(in oklab, var(--accent) 45%, transparent) 170deg,
+          transparent 210deg
+        );
+        filter: blur(18px) opacity(0.22);
+      }
+      .inner {
+        padding: clamp(24px, 4vw, 44px);
+        position: relative;
+        z-index: 1;
+      }
+
+      /* 404 Glitch */
+      .code {
+        font-size: clamp(64px, 12vw, 160px);
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 0.8;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 6px 30px
+          color-mix(in oklab, var(--brand) 40%, transparent);
+        isolation: isolate;
+      }
+      .code::before,
+      .code::after {
+        content: attr(data-text);
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        mix-blend-mode: screen;
+      }
+      .code::before {
+        color: var(--brand);
+        transform: translate(-1px, 0);
+        clip-path: inset(10% 0 30% 0);
+        animation: gl1 2.2s infinite steps(2, end);
+      }
+      .code::after {
+        color: var(--accent);
+        transform: translate(1px, 0);
+        clip-path: inset(60% 0 5% 0);
+        animation: gl2 1.8s infinite steps(2, end);
+      }
+      @keyframes gl1 {
+        50% {
+          transform: translate(-2px, 0);
+        }
+      }
+      @keyframes gl2 {
+        50% {
+          transform: translate(2px, 0);
+        }
+      }
+
+      .title {
+        font-size: clamp(18px, 2.8vw, 28px);
+        margin: 0.4rem 0 0;
+        color: var(--fg);
+      }
+      .muted {
+        color: var(--muted);
+        font-size: clamp(14px, 2.2vw, 18px);
+        margin: 0.6rem 0 1.2rem;
+        max-width: 70ch;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0 6px;
+      }
+      .btn {
+        --p: var(--brand);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid color-mix(in oklab, var(--p) 40%, transparent);
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-weight: 600;
+        color: var(--fg);
+        text-decoration: none;
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--p) 24%, transparent),
+          transparent
+        );
+        box-shadow: 0 6px 20px color-mix(in oklab, var(--p) 22%, transparent),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition: transform 0.18s ease, box-shadow 0.18s ease,
+          background 0.18s ease;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 28px color-mix(in oklab, var(--p) 30%, transparent);
+      }
+      .btn.secondary {
+        --p: var(--accent);
+      }
+      .btn.ghost {
+        --p: #ffffff22;
+        border-color: #ffffff22;
+        background: transparent;
+      }
+      .btn .ic {
+        font-variation-settings: "FILL" 1;
+        font-family: "Material Symbols Outlined", system-ui, sans-serif;
+      }
+
+      /* Ricerca */
+      .search {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 14px;
+      }
+      .search input {
+        flex: 1;
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--fg);
+        outline: none;
+        transition: border-color 0.2s ease, background 0.2s ease;
+      }
+      .search input::placeholder {
+        color: color-mix(in oklab, var(--muted) 80%, transparent);
+      }
+      .search input:focus {
+        border-color: color-mix(in oklab, var(--accent) 50%, transparent);
+        background: rgba(255, 255, 255, 0.09);
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .chip {
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .chip:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Barra utility */
+      .util {
+        position: absolute;
+        inset: auto 16px 16px auto;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        z-index: 2;
+      }
+      .toggle,
+      .palette {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition: transform 0.15s ease;
+      }
+      .toggle:hover,
+      .palette:hover {
+        transform: translateY(-1px);
+      }
+      .sr-only {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Footer mini */
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .links a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px dashed transparent;
+      }
+      .links a:hover {
+        color: var(--fg);
+        border-bottom-color: var(--muted);
+      }
+
+      /* Blob decorativo */
+      .blob {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 40% 60% 50% 50% / 55% 45% 55% 45%;
+        background: radial-gradient(
+            circle at 30% 30%,
+            color-mix(in oklab, var(--brand) 40%, transparent),
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 70% 70%,
+            color-mix(in oklab, var(--accent) 40%, transparent),
+            transparent 60%
+          );
+        filter: blur(50px) saturate(140%);
+        opacity: 0.35;
+        z-index: 0;
+        pointer-events: none;
+        animation: morph 16s ease-in-out infinite alternate;
+      }
+      .blob.one {
+        top: -140px;
+        left: -120px;
+      }
+      .blob.two {
+        bottom: -160px;
+        right: -120px;
+        animation-duration: 20s;
+      }
+      @keyframes morph {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+        }
+        100% {
+          transform: translate3d(20px, -14px, 0) rotate(10deg) scale(1.06);
+        }
+      }
+
+      /* Riduzione animazioni */
+      @media (prefers-reduced-motion: reduce) {
+        .bg-gradient,
+        .noise,
+        .blob,
+        .code::before,
+        .code::after {
+          animation: none !important;
+        }
+        canvas.starfield {
+          display: none;
+        }
+      }
+
+      /* Piccoli schermi */
+      @media (max-width: 520px) {
+        .foot {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+
+  <script>
+    if (
+      !sessionStorage.getItem("loadingShown") &&
+      !window.location.hash.includes("skip-loading")
+    ) {
+      window.location.href = "loading.html";
+      throw new Error("Redirecting to loading...");
+    }
+
+    // Clean up sau khi đã load xong
+    window.addEventListener("load", function () {
+      sessionStorage.setItem("loadingShown", true);
+    });
+  </script>
+  <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+      <div class="app-icon youtube">
+        <i class="fab fa-youtube"></i>
+      </div>
+      <div class="app-icon spotify">
+        <i class="fab fa-spotify"></i>
+      </div>
+      <div class="app-icon tiktok">
+        <i class="fab fa-tiktok"></i>
+      </div>
+      <div class="app-icon soundcloud">
+        <i class="fab fa-soundcloud"></i>
+      </div>
+      <div class="app-icon netflix">
+        <i class="fas fa-film"></i>
+      </div>
+      <div class="app-icon discord">
+        <i class="fab fa-discord"></i>
+      </div>
+    </div>
+    <!-- Floating Ichos - Enhanced -->
+    <div class="floating-icons">
+      <i
+        class="floating-icon youtube fab fa-youtube"
+        data-tooltip="YouTube Premium"
+      ></i>
+      <i
+        class="floating-icon spotify fab fa-spotify"
+        data-tooltip="Spotify Premium"
+      ></i>
+      <i
+        class="floating-icon tiktok fab fa-tiktok"
+        data-tooltip="TikTok Premium"
+      ></i>
+      <i
+        class="floating-icon soundcloud fab fa-soundcloud"
+        data-tooltip="SoundCloud Premium"
+      ></i>
+      <i
+        class="floating-icon picsart fas fa-palette"
+        data-tooltip="PicsArt Gold"
+      ></i>
+      <i
+        class="floating-icon capcut fas fa-scissors"
+        data-tooltip="CapCut Pro"
+      ></i>
+      <i
+        class="floating-icon locket fas fa-lock"
+        data-tooltip="Locket Gold"
+      ></i>
+      <i
+        class="floating-icon bilibili fas fa-b"
+        data-tooltip="Bilibili No ADS"
+      ></i>
+
+      <!-- Thêm các icon phụ trợ -->
+      <i
+        class="floating-icon instagram fab fa-instagram"
+        data-tooltip="Instagram"
+      ></i>
+      <i
+        class="floating-icon twitter fab fa-twitter"
+        data-tooltip="Twitter"
+      ></i>
+      <i
+        class="floating-icon facebook fab fa-facebook"
+        data-tooltip="Facebook"
+      ></i>
+      <i
+        class="floating-icon whatsapp fab fa-whatsapp"
+        data-tooltip="WhatsApp"
+      ></i>
+      <i
+        class="floating-icon telegram fab fa-telegram"
+        data-tooltip="Telegram"
+      ></i>
+      <i
+        class="floating-icon discord fab fa-discord"
+        data-tooltip="Discord"
+      ></i>
+    </div>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+      <i
+        class="floating-icon youtube fab fa-youtube"
+        data-tooltip="YouTube Premium"
+      ></i>
+      <i
+        class="floating-icon spotify fab fa-spotify"
+        data-tooltip="Spotify Premium"
+      ></i>
+      <i
+        class="floating-icon tiktok fab fa-tiktok"
+        data-tooltip="TikTok Premium"
+      ></i>
+      <i
+        class="floating-icon soundcloud fab fa-soundcloud"
+        data-tooltip="SoundCloud Premium"
+      ></i>
+      <i
+        class="floating-icon picsart fas fa-palette"
+        data-tooltip="PicsArt Gold"
+      ></i>
+      <i
+        class="floating-icon capcut fas fa-scissors"
+        data-tooltip="CapCut Pro"
+      ></i>
+      <i
+        class="floating-icon locket fas fa-lock"
+        data-tooltip="Locket Gold"
+      ></i>
+    </div>
+    <canvas class="starfield" aria-hidden="true"></canvas>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <div class="wrap">
+      <div class="card" role="group" aria-label="Trang 404">
+        <div class="blob one" aria-hidden="true"></div>
+        <div class="blob two" aria-hidden="true"></div>
+
+        <div class="util">
+          <button
+            class="palette"
+            id="palette"
+            aria-label="Đổi bảng màu"
+            title="Đổi bảng màu"
+          >
+            🎨
+          </button>
+          <button
+            class="toggle"
+            id="theme"
+            aria-label="Đổi chế độ sáng/tối"
+            title="Chế độ sáng/tối"
+          >
+            ☾
+          </button>
+        </div>
+
+        <div class="inner">
+          <h1 class="code" data-text="404" aria-label="Lỗi 404">404</h1>
+          <p class="title">Không tìm thấy trang</p>
+          <p class="muted">
+            Có thể liên kết đã bị di chuyển, đổi tên hoặc không còn tồn tại.
+            Quay lại Trang chủ hoặc thử tìm kiếm.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="index.html" aria-label="Về trang chủ">
+              <i class="fas fa-home"></i> Trang chủ
+            </a>
+            <a
+              class="btn secondary"
+              href="modules.html"
+              aria-label="Khám phá modules"
+            >
+              <i class="fas fa-cube"></i> Modules
+            </a>
+            <button class="btn ghost" id="surprise" aria-label="Bất ngờ">
+              <i class="fas fa-magic"></i> Bất ngờ
+            </button>
+          </div>
+
+          <form
+            class="search"
+            role="search"
+            aria-label="Tìm kiếm trên website"
+            onsubmit="return runSearch(event)"
+          >
+            <input
+              id="q"
+              type="search"
+              placeholder="Tìm kiếm trên website…"
+              aria-label="Ô tìm kiếm"
+            />
+            <button class="btn secondary" type="submit" aria-label="Tìm kiếm">
+              <i class="fas fa-search"></i> Tìm
+            </button>
+          </form>
+          <div class="chips" aria-label="Gợi ý tìm kiếm">
+            <button class="chip" data-q="YouTube Premium">
+              YouTube Premium
+            </button>
+            <button class="chip" data-q="Spotify">Spotify</button>
+            <button class="chip" data-q="TikTok">TikTok</button>
+            <button class="chip" data-q="Picsart">Picsart</button>
+            <button class="chip" data-q="Locket">Locket</button>
+          </div>
+
+          <div class="foot" aria-label="Liên kết hữu ích">
+            <span>💡 Mẹo: Nhấn ↑ ↑ ↓ ↓ ← → ← → B A</span>
+            <div class="links">
+              <a href="index.html">Trang chủ</a>
+              <a href="modules.html">Modules</a>
+              <a href="comingSoon.html">Hỗ trợ</a>
+              <a href="404.html">Liên hệ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* ===== Starfield minimal ===== */
+      const canvas = document.querySelector("canvas.starfield");
+      const ctx = canvas.getContext("2d");
+      let stars = [],
+        W,
+        H,
+        mouse = { x: 0, y: 0 },
+        tick = 0;
+
+      function size() {
+        W = canvas.width = innerWidth;
+        H = canvas.height = innerHeight;
+      }
+      addEventListener("resize", size, { passive: true });
+      size();
+
+      function initStars(n = 140) {
+        stars = Array.from({ length: n }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          z: Math.random() * 1 + 0.2,
+          r: Math.random() * 1.2 + 0.2,
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2,
+        }));
+      }
+      initStars();
+
+      addEventListener(
+        "mousemove",
+        (e) => {
+          mouse.x = e.clientX;
+          mouse.y = e.clientY;
+        },
+        { passive: true }
+      );
+
+      function loop() {
+        tick++;
+        ctx.clearRect(0, 0, W, H);
+        for (const s of stars) {
+          // parallax nhẹ với chuột
+          const px = (mouse.x / W - 0.5) * 6 * s.z;
+          const py = (mouse.y / H - 0.5) * 6 * s.z;
+          s.x += s.vx + px * 0.002;
+          s.y += s.vy + py * 0.002;
+          if (s.x < -10) s.x = W + 10;
+          if (s.x > W + 10) s.x = -10;
+          if (s.y < -10) s.y = H + 10;
+          if (s.y > H + 10) s.y = -10;
+
+          // hiệu ứng phát sáng
+          const glow = 0.4 + Math.sin(tick / 30 + s.x) * 0.3;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = `hsla(${200 + s.z * 80}, 90%, ${70 + glow * 20}%, ${
+            0.45 + s.z * 0.3
+          })`;
+          ctx.fill();
+        }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+
+      /* ===== Tìm kiếm ===== */
+      function runSearch(e) {
+        e.preventDefault();
+        const term = document.getElementById("q").value.trim();
+        if (!term) {
+          toast("Vui lòng nhập từ khóa tìm kiếm.");
+          return false;
+        }
+        // Có thể chuyển hướng đến /search?q=...
+        toast(`Đang tìm kiếm "${term}"...`);
+        setTimeout(
+          () => (location.href = `/search?q=${encodeURIComponent(term)}`),
+          600
+        );
+        return false;
+      }
+      document.querySelectorAll(".chip").forEach((c) =>
+        c.addEventListener("click", () => {
+          const v = c.getAttribute("data-q");
+          document.getElementById("q").value = v;
+          document.getElementById("q").focus();
+        })
+      );
+
+      /* ===== Theme & palette ===== */
+      const themeBtn = document.getElementById("theme");
+      const palettes = [
+        "palette-aurora",
+        "palette-sunset",
+        "palette-forest",
+        "palette-ocean",
+      ];
+      const paletteBtn = document.getElementById("palette");
+      function setTheme(t) {
+        document.body.dataset.theme = t;
+        document.documentElement.style.colorScheme = t;
+        themeBtn.innerHTML =
+          t === "dark"
+            ? '<i class="fas fa-moon"></i>'
+            : '<i class="fas fa-sun"></i>';
+        localStorage.setItem("theme404", t);
+      }
+      function nextPalette() {
+        const cur = palettes.find((p) => document.body.classList.contains(p));
+        const idx = palettes.indexOf(cur);
+        document.body.classList.remove(cur);
+        const next = palettes[(idx + 1) % palettes.length];
+        document.body.classList.add(next);
+        localStorage.setItem("palette404", next);
+        toast("Đã đổi bảng màu");
+      }
+      themeBtn.addEventListener("click", () =>
+        setTheme(document.body.dataset.theme === "dark" ? "light" : "dark")
+      );
+      paletteBtn.addEventListener("click", nextPalette);
+
+      // Lưu cài đặt
+      (function () {
+        const t = localStorage.getItem("theme404");
+        if (t) setTheme(t);
+        const p = localStorage.getItem("palette404");
+        if (p && palettes.includes(p)) {
+          document.body.classList.remove(...palettes);
+          document.body.classList.add(p);
+        }
+      })();
+
+      /* ===== Thông báo ===== */
+      let toastEl;
+      function toast(msg) {
+        if (!toastEl) {
+          toastEl = document.createElement("div");
+          Object.assign(toastEl.style, {
+            position: "fixed",
+            bottom: "18px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "rgba(0,0,0,.6)",
+            color: "#fff",
+            padding: "10px 14px",
+            borderRadius: "10px",
+            backdropFilter: "blur(8px)",
+            border: "1px solid rgba(255,255,255,.15)",
+            zIndex: 1000,
+            fontSize: "14px",
+          });
+          document.body.appendChild(toastEl);
+        }
+        toastEl.textContent = msg;
+        toastEl.style.opacity = "0";
+        toastEl.style.transition = "opacity .15s ease";
+        requestAnimationFrame(() => (toastEl.style.opacity = "1"));
+        clearTimeout(toastEl._t);
+        toastEl._t = setTimeout(() => (toastEl.style.opacity = "0"), 1300);
+      }
+
+      /* ===== Hiệu ứng bất ngờ ===== */
+      document.getElementById("surprise").addEventListener("click", () => {
+        const code = document.querySelector(".code");
+        code.animate(
+          [
+            { filter: "drop-shadow(0 0 0 rgba(255,255,255,0))" },
+            { filter: "drop-shadow(0 0 40px var(--glow))" },
+          ],
+          { duration: 420, iterations: 2, direction: "alternate" }
+        );
+        confettiBurst();
+        toast("✨ Phép thuật!");
+      });
+
+      function confettiBurst() {
+        // confetti nhẹ với emoji
+        const n = 26;
+        for (let i = 0; i < n; i++) {
+          const s = document.createElement("div");
+          s.textContent = ["★", "✦", "✧", "✺", "✼", "❖", "❀"][
+            Math.floor(Math.random() * 7)
+          ];
+          Object.assign(s.style, {
+            position: "fixed",
+            left: Math.random() * 100 + "vw",
+            top: "-10vh",
+            fontSize: Math.random() * 18 + 12 + "px",
+            transform: `rotate(${Math.random() * 360}deg)`,
+            zIndex: 999,
+            pointerEvents: "none",
+          });
+          document.body.appendChild(s);
+          const tx = Math.random() * 40 - 20 + "vw";
+          s.animate(
+            [
+              { transform: s.style.transform, top: "-10vh" },
+              {
+                transform: `translate(${tx},0) rotate(${
+                  Math.random() * 720 - 360
+                }deg)`,
+                top: "110vh",
+              },
+            ],
+            {
+              duration: 1500 + Math.random() * 800,
+              easing: "cubic-bezier(.2,.6,.2,1)",
+            }
+          ).onfinish = () => s.remove();
+        }
+      }
+
+      /* ===== Mã Konami ===== */
+      const seq = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+      let pos = 0;
+      addEventListener("keydown", (e) => {
+        if (e.keyCode === seq[pos]) pos++;
+        else pos = e.keyCode === seq[0] ? 1 : 0;
+        if (pos === seq.length) {
+          pos = 0;
+          toast("Chế độ Hyper!");
+          hyperMode();
+        }
+      });
+      function hyperMode() {
+        document
+          .querySelector(".card")
+          .animate([{ transform: "scale(1)" }, { transform: "scale(1.02)" }], {
+            duration: 240,
+            direction: "alternate",
+            iterations: 4,
+          });
+        for (const b of document.querySelectorAll(".blob"))
+          b.animate([{ opacity: 0.35 }, { opacity: 0.6 }], {
+            duration: 2000,
+            direction: "alternate",
+            iterations: 2,
+          });
+        confettiBurst();
+      }
+
+      /* ===== Accessibility: focus visible ===== */
+      document.addEventListener(
+        "keydown",
+        (e) => {
+          if (e.key === "Tab") {
+            document.documentElement.classList.add("show-focus");
+          }
+        },
+        { once: true }
+      );
+      const styleFocus = document.createElement("style");
+      styleFocus.textContent = `.show-focus .btn:focus,.show-focus .toggle:focus,.show-focus .palette:focus,.show-focus input:focus,.show-focus .chip:focus{outline:2px solid var(--accent); outline-offset:2px}`;
+      document.head.appendChild(styleFocus);
+    </script>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>

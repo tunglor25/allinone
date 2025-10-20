@@ -8,32 +8,64 @@
       name="description"
       content="Unlock YouTube Premium, Spotify, TikTok, SoundCloud, PicsArt Gold, CapCut Pro và nhiều hơn nữa"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.png" type="image/png" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="assets/icon.png" type="image/png">
+
+    <!-- Framework & Libraries CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/chartist@0.11.4/dist/chartist.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style_Home.css" />
   </head>
+
   <script>
-    // Redirect to loading page nếu chưa xem loading
     if (
       !sessionStorage.getItem("loadingShown") &&
       !window.location.hash.includes("skip-loading")
     ) {
       window.location.href = "loading.html";
-      throw new Error("Redirecting to loading..."); // Dừng execution ngay lập tức
+      throw new Error("Redirecting to loading...");
     }
 
     // Clean up sau khi đã load xong
     window.addEventListener("load", function () {
-      // Có thể thêm logic clean up ở đây nếu cần
+      sessionStorage.setItem("loadingShown", true);
     });
   </script>
   <body>
@@ -152,353 +184,414 @@
       ></i>
     </div>
 
-    <!-- Main Container -->
-    <div class="container">
-      <!-- Header -->
-      <header class="header">
-        <div class="logo-container">
-          <div class="logo">
-            <img
-              src="https://shadowrocketvpn.com/wp-content/uploads/2023/10/shadowrocket-logo.png"
-              alt="Shadowrocket"
-              style="width: 70px; height: 70px; object-fit: contain"
-            />
+    <header>
+      <!-- Navigation Bar -->
+      <nav class="nav-container">
+        <div class="nav-wrapper">
+          <!-- Logo Section - Bên trái -->
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">🚀</div>
+            <span class="logo-text">ThrustNet</span>
+          </a>
+
+          <!-- Desktop Navigation - Sát bên phải -->
+          <div class="nav-desktop">
+            <a href="index.html" class="nav-link active">Trang chủ</a>
+            <a href="modules.html" class="nav-link">Modules</a>
+            <a href="comingSoon.html" class="nav-link">Hỗ trợ</a>
           </div>
-          <div class="title-group">
-            <h1 class="main-title">Shadow Rocket Ultimate</h1>
-            <p class="subtitle">Premium Unlock 2025</p>
+
+          <!-- Mobile Navigation Toggle - Sát bên phải -->
+          <div class="nav-mobile">
+            <button
+              class="mobile-menu-toggle"
+              id="mobileMenuToggle"
+              type="button"
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </div>
 
-        <!-- Version Badge -->
-        <div class="version-badge-container">
-          <div class="badge new">
-            <span></span>
-            <span class="badge-text">NEW v2.0</span>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+          <a href="index.html" class="mobile-nav-link active">Trang chủ</a>
+          <a href="modules.html" class="mobile-nav-link">Modules</a>
+          <a href="comingSoon.html" class="mobile-nav-link">Hỗ trợ</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Banner -->
+      <section class="thrustnet-hero">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            ThrustNet – Dịch vụ số Premium giá tốt nhất
+          </h1>
+          <p class="hero-subtitle">
+            Mọi dịch vụ cao cấp, từ Netflix đến Spotify, đều trong tầm tay bạn.
+            Bảo mật cấp quân sự, tốc độ tên lửa, hỗ trợ 24/7 – chỉ có tại
+            ThrustNet.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn-primary-custom">
+              <i class="fas fa-rocket"></i>
+              Khám phá ngay
+            </button>
+            <button class="btn-outline-custom">
+              <i class="fas fa-headset"></i>
+              Liên hệ ngay
+            </button>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number">5M+</div>
+              <div class="stat-label">Người dùng</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">8+</div>
+              <div class="stat-label">Ứng dụng Premium</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">99.9%</div>
+              <div class="stat-label">Thời gian hoạt động</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Hỗ trợ khách hàng</div>
+            </div>
           </div>
         </div>
-        <!-- status -->
-        <div class="status-container">
-          <div class="status-online">
-            <button class="available-for-btn">
-              <div class="circle">
-                <div class="dot"></div>
-                <div class="outline"></div>
+      </section>
+
+      <!-- Features Section -->
+      <section class="features-section">
+        <h2 class="section-title">Các dịch vụ đang có</h2>
+        <div class="features-grid-custom">
+          <!-- YouTube Premium -->
+          <div class="feature-card-custom status-online" data-app="youtube">
+            <div class="feature-status-indicator">
+              <div class="status-dot"></div>
+              <span>LIVE</span>
+            </div>
+            <div class="feature-card-content">
+              <div class="feature-icon youtube">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png"
+                  alt="YouTube Premium"
+                  class="app-icon-img"
+                />
               </div>
-              <span class="status-text">HỆ THỐNG ĐANG HOẠT ĐỘNG</span>
-            </button>
+              <h3>YouTube Premium</h3>
+              <p>Không quảng cáo, phát nhạc nền, chế độ Picture-in-Picture</p>
+              <div class="feature-card-status">
+                <button class="feature-status-btn">
+                  <div class="circle">
+                    <div class="dot"></div>
+                    <div class="outline"></div>
+                  </div>
+                  <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      </header>
 
-      <!-- Stats -->
-      <div class="stats-grid">
-        <div class="stat-card">
-          <i class="stat-icon fas fa-check-circle"></i>
-          <div class="stat-content">
-            <span class="stat-number">8+</span>
-            <span class="stat-label">Ứng dụng Premium</span>
+          <!-- Spotify -->
+          <div class="feature-card-custom status-online" data-app="spotify">
+            <div class="feature-status-indicator">
+              <div class="status-dot"></div>
+              <span>LIVE</span>
+            </div>
+            <div class="feature-card-content">
+              <div class="feature-icon spotify">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/023/986/728/non_2x/spotify-logo-spotify-logo-transparent-spotify-icon-transparent-free-free-png.png"
+                  alt="Spotify Premium"
+                  class="app-icon-img"
+                />
+              </div>
+              <h3>Spotify Premium</h3>
+              <p>Nghe nhạc không quảng cáo, tải xuống, chất lượng cao</p>
+              <div class="feature-card-status">
+                <button class="feature-status-btn">
+                  <div class="circle">
+                    <div class="dot"></div>
+                    <div class="outline"></div>
+                  </div>
+                  <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Picsart Premium -->
+          <div class="feature-card-custom status-online" data-app="picsart">
+            <div class="feature-status-indicator">
+              <div class="status-dot"></div>
+              <span>LIVE</span>
+            </div>
+            <div class="feature-card-content">
+              <div class="feature-icon picsart">
+                <img
+                  src="https://static.vecteezy.com/system/resources/previews/052/925/023/non_2x/picsart-logo-on-a-transparent-background-free-png.png"
+                  alt="Picsart Premium"
+                  class="app-icon-img"
+                />
+              </div>
+              <h3>Picsart Premium</h3>
+              <p>
+                Chỉnh sửa ảnh chuyên nghiệp, không watermark, hiệu ứng độc quyền
+              </p>
+              <div class="feature-card-status">
+                <button class="feature-status-btn">
+                  <div class="circle">
+                    <div class="dot"></div>
+                    <div class="outline"></div>
+                  </div>
+                  <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SoundCloud Plus -->
+          <div class="feature-card-custom status-online" data-app="soundcloud">
+            <div class="feature-status-indicator">
+              <div class="status-dot"></div>
+              <span>LIVE</span>
+            </div>
+            <div class="feature-card-content">
+              <div class="feature-icon soundcloud">
+                <img
+                  src="https://logos-world.net/wp-content/uploads/2020/11/SoundCloud-Logo-2008.png"
+                  alt="SoundCloud Plus"
+                  class="app-icon-img"
+                />
+              </div>
+              <h3>SoundCloud Plus</h3>
+              <p>Nghe nhạc không giới hạn, tải xuống, chất lượng lossless</p>
+              <div class="feature-card-status">
+                <button class="feature-status-btn">
+                  <div class="circle">
+                    <div class="dot"></div>
+                    <div class="outline"></div>
+                  </div>
+                  <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bilibili No ADS -->
+          <div class="feature-card-custom status-online" data-app="bilibili">
+            <div class="feature-status-indicator">
+              <div class="status-dot"></div>
+              <span>LIVE</span>
+            </div>
+            <div class="feature-card-content">
+              <div class="feature-icon bilibili">
+                <img
+                  src="https://img.icons8.com/?size=512&id=5E24fZ9ORelo&format=png"
+                  alt="Bilibili No ADS"
+                  class="app-icon-img"
+                />
+              </div>
+              <h3>Bilibili No ADS</h3>
+              <p>Xem anime, video không quảng cáo, tải xuống chất lượng cao</p>
+              <div class="feature-card-status">
+                <button class="feature-status-btn">
+                  <div class="circle">
+                    <div class="dot"></div>
+                    <div class="outline"></div>
+                  </div>
+                  <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Locket Gold -->
+          <div class="feature-card-custom status-online" data-app="locket">
+            <div class="feature-status-indicator">
+              <div class="status-dot"></div>
+              <span>LIVE</span>
+            </div>
+            <div class="feature-card-content">
+              <div class="feature-icon locket">
+                <img
+                  src="https://ineqe.com/wp-content/uploads/2022/02/locket_app_icon-1024x1024.png?odnHeight=117&odnWidth=117&odnBg=FFFFFF"
+                  alt="Locket Gold"
+                  class="app-icon-img"
+                />
+              </div>
+              <h3>Locket Gold</h3>
+              <p>
+                Chia sẻ ảnh thời gian thực, widget tùy chỉnh, không giới hạn
+              </p>
+              <div class="feature-card-status">
+                <button class="feature-status-btn">
+                  <div class="circle">
+                    <div class="dot"></div>
+                    <div class="outline"></div>
+                  </div>
+                  <span class="status-text">ĐANG HOẠT ĐỘNG</span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="stat-card">
-          <i class="stat-icon fas fa-sync"></i>
-          <div class="stat-content">
-            <span class="stat-number">24/7</span>
-            <span class="stat-label">Auto Update</span>
+      </section>
+
+      <!-- Why Choose Section -->
+      <section class="why-choose-section">
+        <h2 class="section-title">Tại sao chọn ThrustNet?</h2>
+        <p class="section-description">
+          Chúng tôi cam kết mang đến trải nghiệm VPN cao cấp và ổn định nhất,
+          với dịch vụ chuyên nghiệp, nhanh chóng và bảo mật tuyệt đối. ThrustNet
+          luôn đồng hành cùng bạn trong hành trình mở khóa thế giới số không
+          giới hạn.
+        </p>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Bảo mật tuyệt đối</h3>
+            <p>
+              Mọi dữ liệu và thông tin của bạn được mã hóa bằng công nghệ
+              AES-256 tiên tiến, đảm bảo an toàn tuyệt đối trong mọi kết nối.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
+            <h3>Tốc độ tên lửa</h3>
+            <p>
+              Hệ thống máy chủ toàn cầu giúp kết nối nhanh, ổn định và không
+              giới hạn băng thông, mang lại trải nghiệm mượt mà trên mọi ứng
+              dụng.
+            </p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>Hỗ trợ 24/7</h3>
+            <p>
+              Đội ngũ kỹ thuật chuyên nghiệp và tận tâm luôn sẵn sàng hỗ trợ,
+              giúp bạn kết nối và tận hưởng dịch vụ trọn vẹn, mọi lúc – mọi nơi.
+            </p>
           </div>
         </div>
-        <div class="stat-card">
-          <i class="stat-icon fas fa-shield-alt"></i>
-          <div class="stat-content">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">An toàn</span>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Giới thiệu -->
+          <div class="footer-section">
+            <h5>Về Chúng Tôi</h5>
+            <p class="footer-about">
+              <strong>ThrustNet</strong> là nền tảng VPN thế hệ mới, được thiết
+              kế để mở khóa, tăng tốc và bảo mật kết nối Internet trên iPhone và
+              iPad. ThrustNet mang đến sức mạnh bứt phá, giúp người dùng truy
+              cập các ứng dụng và nội dung Premium, Pro, Gold mà không bị giới
+              hạn vùng hoặc tốc độ.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
           </div>
+
+          <!-- Liên kết nhanh -->
+          <div class="footer-section">
+            <h5>Liên Kết Nhanh</h5>
+            <ul class="footer-links">
+              <li><a href="index.html" class="footer-link">Trang Chủ</a></li>
+              <li>
+                <a href="comingSoon.html" class="footer-link">Giới Thiệu</a>
+              </li>
+              <li><a href="modules.html" class="footer-link">Dịch Vụ</a></li>
+              <li><a href="comingSoon.html" class="footer-link">Liên Hệ</a></li>
+            </ul>
+          </div>
+
+          <!-- Dịch vụ -->
+          <div class="footer-section">
+            <h5>Dịch Vụ</h5>
+            <ul class="footer-links">
+              <li>
+                <a href="comingSoon.html" class="footer-link"
+                  >Phát Triển Modules</a
+                >
+              </li>
+              <li>
+                <a href="comingSoon.html" class="footer-link">Chạy Quảng Cáo</a>
+              </li>
+              <li>
+                <a href="comingSoon.html" class="footer-link">Phát Triển VPN</a>
+              </li>
+              <li>
+                <a href="comingSoon.html" class="footer-link"
+                  >Phân Tích Dữ Liệu</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Thông tin liên hệ -->
+          <div class="footer-section">
+            <h5>Thông Tin Liên Hệ</h5>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span
+                  >FPT Polytechnic, Trịnh Văn Bô, Xuân Phương, Nam Từ Liêm, Hà
+                  Nội</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+84344122842">+84 0344122842</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:trantungvn8@gamil.com">trantungvn8@gamil.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bản quyền -->
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2024 ThrustNet - Dịch Vụ Mở Khóa Premium Toàn Diện.
+          </p>
         </div>
       </div>
-
-      <!-- Features Grid -->
-      <div class="features-grid">
-        <!-- YouTube Premium -->
-        <div class="feature-card status-online" data-app="youtube">
-          <div class="feature-status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE</span>
-          </div>
-          <div class="feature-card-content">
-            <div class="feature-icon youtube">
-              <i class="fab fa-youtube"></i>
-            </div>
-            <h3>YouTube Premium</h3>
-            <p>No ADS, Background Play, PiP Mode</p>
-            <div class="feature-card-status">
-              <button class="feature-status-btn">
-                <div class="circle">
-                  <div class="dot"></div>
-                  <div class="outline"></div>
-                </div>
-                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Spotify Premium -->
-        <div class="feature-card status-online" data-app="spotify">
-          <div class="feature-status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE</span>
-          </div>
-          <div class="feature-card-content">
-            <div class="feature-icon spotify">
-              <i class="fab fa-spotify"></i>
-            </div>
-            <h3>Spotify Premium</h3>
-            <p>Extreme Quality, No Ads, Unlimited Skips</p>
-            <div class="feature-card-status">
-              <button class="feature-status-btn">
-                <div class="circle">
-                  <div class="dot"></div>
-                  <div class="outline"></div>
-                </div>
-                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- TikTok Premium -->
-        <div class="feature-card status-online" data-app="tiktok">
-          <div class="feature-status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE</span>
-          </div>
-          <div class="feature-card-content">
-            <div class="feature-icon tiktok">
-              <i class="fab fa-tiktok"></i>
-            </div>
-            <h3>TikTok Premium</h3>
-            <p>No ADS, Download Videos, Premium Effects</p>
-            <div class="feature-card-status">
-              <button class="feature-status-btn">
-                <div class="circle">
-                  <div class="dot"></div>
-                  <div class="outline"></div>
-                </div>
-                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- SoundCloud Premium -->
-        <div class="feature-card status-online" data-app="soundcloud">
-          <div class="feature-status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE</span>
-          </div>
-          <div class="feature-card-content">
-            <div class="feature-icon soundcloud">
-              <i class="fab fa-soundcloud"></i>
-            </div>
-            <h3>SoundCloud Premium</h3>
-            <p>Offline Listening, No Ads, Full Catalog</p>
-            <div class="feature-card-status">
-              <button class="feature-status-btn">
-                <div class="circle">
-                  <div class="dot"></div>
-                  <div class="outline"></div>
-                </div>
-                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- PicsArt Gold -->
-        <div class="feature-card status-online" data-app="picsart">
-          <div class="feature-status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE</span>
-          </div>
-          <div class="feature-card-content">
-            <div class="feature-icon picsart">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/052/925/023/non_2x/picsart-logo-on-a-transparent-background-free-png.png"
-                alt="Picsart Logo"
-                style="width: 100px; height: 100px; object-fit: contain"
-              />
-            </div>
-
-            <h3>PicsArt Gold</h3>
-            <p>All Filters, No Watermark, Premium Tools</p>
-            <div class="feature-card-status">
-              <button class="feature-status-btn">
-                <div class="circle">
-                  <div class="dot"></div>
-                  <div class="outline"></div>
-                </div>
-                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- CapCut Pro -->
-        <div class="feature-card status-online" data-app="capcut">
-          <div class="feature-status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE</span>
-          </div>
-          <div class="feature-card-content">
-            <div class="feature-icon picsart">
-              <img
-                src="https://static.vecteezy.com/system/resources/previews/067/065/640/non_2x/capcut-logo-square-rounded-capcut-logo-capcut-logo-free-download-free-png.png"
-                alt="Picsart Logo"
-                style="width: 70px; height: 70px; object-fit: contain"
-              />
-            </div>
-            <h3>CapCut Pro</h3>
-            <p>Pro Features, No Watermark, All Templates</p>
-            <div class="feature-card-status">
-              <button class="feature-status-btn">
-                <div class="circle">
-                  <div class="dot"></div>
-                  <div class="outline"></div>
-                </div>
-                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Locket Gold -->
-        <div class="feature-card status-online" data-app="locket">
-          <div class="feature-status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE</span>
-          </div>
-          <div class="feature-card-content">
-            <div class="feature-icon picsart">
-              <img
-                src="https://ineqe.com/wp-content/uploads/2022/02/locket_app_icon-1024x1024.png?odnHeight=117&odnWidth=117&odnBg=FFFFFF"
-                alt="Picsart Logo"
-                style="width: 70px; height: 70px; object-fit: contain"
-              />
-            </div>
-            <h3>Locket Gold</h3>
-            <p>Premium Widgets, Unlimited Customization</p>
-            <div class="feature-card-status">
-              <button class="feature-status-btn">
-                <div class="circle">
-                  <div class="dot"></div>
-                  <div class="outline"></div>
-                </div>
-                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- Bilibili No ADS -->
-        <div class="feature-card status-online" data-app="bilibili">
-          <div class="feature-status-indicator">
-            <div class="status-dot"></div>
-            <span>LIVE</span>
-          </div>
-          <div class="feature-card-content">
-            <div class="feature-icon picsart">
-              <img
-                src="https://img.icons8.com/?size=512&id=5E24fZ9ORelo&format=png"
-                alt="Picsart Logo"
-                style="width: 70px; height: 70px; object-fit: contain"
-              />
-            </div>
-            <h3>Bilibili No ADS</h3>
-            <p>Remove All Ads, Premium Content</p>
-            <div class="feature-card-status">
-              <button class="feature-status-btn">
-                <div class="circle">
-                  <div class="dot"></div>
-                  <div class="outline"></div>
-                </div>
-                <span class="status-text">ĐANG HOẠT ĐỘNG</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Download Section -->
-      <div class="download-section">
-        <h2 class="section-title">Cài Đặt Ngay</h2>
-
-        <!-- Main Download Button -->
-        <div class="metal-container">
-          <button id="mainDownloadBtn" class="metal-button main-download-btn">
-            <p>🚀 TẢI NGAY - SHADOW ROCKET</p>
-          </button>
-        </div>
-
-        <!-- App Buttons -->
-        <div class="app-buttons-grid">
-          <button class="app-btn shadowrocket" data-app="shadowrocket">
-            <i class="fas fa-rocket"></i>
-            <span>Shadowrocket</span>
-          </button>
-          <button class="app-btn quantumult" data-app="quantumult">
-            <i class="fas fa-bolt"></i>
-            <span>Quantumult</span>
-          </button>
-          <button class="app-btn surge" data-app="surge">
-            <i class="fas fa-chart-line"></i>
-            <span>Surge</span>
-          </button>
-          <button class="app-btn loon" data-app="loon">
-            <i class="fas fa-moon"></i>
-            <span>Loon</span>
-          </button>
-          <button class="app-btn clash" data-app="clash">
-            <i class="fas fa-shield-alt"></i>
-            <span>Clash</span>
-          </button>
-        </div>
-
-        <!-- Config URL -->
-        <div class="config-url-section">
-          <h2 class="section-title">URL Cấu Hình</h2>
-          <div class="url-container">
-            <code id="configUrl" class="config-url">
-              https://raw.githubusercontent.com/tunglor25/allinone/main/ShadowRocket_Ultimate.conf
-            </code>
-            <button id="copyUrlBtn" class="copy-btn" title="Copy URL">
-              <i class="fas fa-copy"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <footer class="footer">
-        <div class="footer-content">
-          <div class="footer-info">
-            <p>© 2024 Shadow Rocket Ultimate Premium Unlock</p>
-            <p>Cập nhật lần cuối: <span id="updateDate"></span></p>
-          </div>
-          <div class="footer-stats">
-            <span class="online-count">
-              <i class="fas fa-users"></i>
-              <span id="userCount">1,258</span> người đang online
-            </span>
-          </div>
-        </div>
-      </footer>
-    </div>
-
-    <!-- Notification -->
-    <div id="notification" class="notification">
-      <i class="notification-icon"></i>
-      <span class="notification-text"></span>
-    </div>
+    </footer>
 
     <script src="script/script.js"></script>
+    <script src="script/script_Home.js"></script>
   </body>
 </html>

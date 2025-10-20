@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🚀 Shadow Rocket Ultimate - Premium Unlock</title>
+    <meta
+      name="description"
+      content="Unlock YouTube Premium, Spotify, TikTok, SoundCloud, PicsArt Gold, CapCut Pro và nhiều hơn nữa"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.png" type="image/png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Framework & Libraries CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/chartist@0.11.4/dist/chartist.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      :root {
+        --bg-1: #0b1220;
+        --bg-2: #111827;
+        --fg: #e6edf3;
+        --muted: #9aa4b2;
+        --brand: #7c3aed;
+        --accent: #22d3ee;
+        --glass: rgba(255, 255, 255, 0.08);
+        --card: #0f1629;
+        --glow: #7c3aed55;
+      }
+      /* Palette alternative */
+      body.palette-aurora {
+        --bg-1: #0b1220;
+        --bg-2: #111827;
+        --brand: #7c3aed;
+        --accent: #22d3ee;
+        --card: #0f1629;
+        --glow: #7c3aed55;
+      }
+      body.palette-sunset {
+        --bg-1: #150b1a;
+        --bg-2: #1d0f2a;
+        --brand: #ff6b6b;
+        --accent: #ffd166;
+        --card: #1a1022;
+        --glow: #ff6b6b55;
+      }
+      body.palette-forest {
+        --bg-1: #0b1512;
+        --bg-2: #0f2018;
+        --brand: #34d399;
+        --accent: #60a5fa;
+        --card: #0d1b16;
+        --glow: #34d39955;
+      }
+      body.palette-ocean {
+        --bg-1: #06141f;
+        --bg-2: #0a2233;
+        --brand: #3b82f6;
+        --accent: #22d3ee;
+        --card: #0a1c29;
+        --glow: #3b82f655;
+      }
+
+      /* Resetter */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+        color: var(--fg);
+        background: radial-gradient(
+            1200px 1200px at 80% -10%,
+            var(--bg-2),
+            transparent 60%
+          ),
+          linear-gradient(180deg, var(--bg-1), var(--bg-2));
+        /* overflow: hidden; */
+      }
+
+      /* Sfondo animato morbido */
+      .bg-gradient {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -2;
+        background: radial-gradient(
+            1200px 800px at 10% 10%,
+            color-mix(in oklab, var(--brand) 40%, transparent),
+            transparent 60%
+          ),
+          radial-gradient(
+            1200px 800px at 90% 90%,
+            color-mix(in oklab, var(--accent) 40%, transparent),
+            transparent 60%
+          );
+        filter: saturate(120%);
+        animation: drift 18s ease-in-out infinite alternate;
+      }
+      @keyframes drift {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(2vw, -2vh, 0) scale(1.02);
+        }
+      }
+
+      /* Grana delicata */
+      .noise {
+        position: fixed;
+        inset: -50%;
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0.06;
+        mix-blend-mode: soft-light;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2' seed='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+        animation: noiseMove 12s linear infinite;
+      }
+      @keyframes noiseMove {
+        to {
+          transform: translate3d(5%, 5%, 0);
+        }
+      }
+
+      /* Canvas particelle */
+      canvas.starfield {
+        position: fixed;
+        inset: 0;
+        z-index: -3;
+      }
+
+      /* Contenuto centrale */
+      .wrap {
+        min-height: 100dvh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      .card {
+        width: min(900px, 92vw);
+        border-radius: 20px;
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--card) 92%, transparent),
+          color-mix(in oklab, var(--card) 88%, transparent)
+        );
+        border: 1px solid color-mix(in oklab, var(--fg) 8%, transparent);
+        box-shadow: 0 30px 120px var(--glow),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px) saturate(110%);
+        -webkit-backdrop-filter: blur(10px) saturate(110%);
+        position: relative;
+        overflow: hidden;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: inherit;
+        pointer-events: none;
+        background: conic-gradient(
+          from 180deg at 50% 50%,
+          transparent 0 30deg,
+          color-mix(in oklab, var(--brand) 45%, transparent) 60deg,
+          transparent 120deg,
+          color-mix(in oklab, var(--accent) 45%, transparent) 170deg,
+          transparent 210deg
+        );
+        filter: blur(18px) opacity(0.22);
+      }
+      .inner {
+        padding: clamp(24px, 4vw, 44px);
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Coming Soon Title */
+      .coming-title {
+        font-size: clamp(48px, 8vw, 80px);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 0.9;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+        text-shadow: 0 6px 30px
+          color-mix(in oklab, var(--brand) 40%, transparent);
+        background: linear-gradient(135deg, var(--brand), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: titleGlow 3s ease-in-out infinite alternate;
+      }
+      @keyframes titleGlow {
+        0% {
+          filter: drop-shadow(
+            0 0 10px color-mix(in oklab, var(--brand) 30%, transparent)
+          );
+        }
+        100% {
+          filter: drop-shadow(
+            0 0 25px color-mix(in oklab, var(--accent) 40%, transparent)
+          );
+        }
+      }
+
+      .subtitle {
+        font-size: clamp(18px, 2.8vw, 28px);
+        margin: 0.4rem 0 0;
+        color: var(--fg);
+        font-weight: 600;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: clamp(14px, 2.2vw, 18px);
+        margin: 0.6rem 0 1.2rem;
+        max-width: 70ch;
+      }
+
+      /* Countdown Timer */
+      .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem 0;
+        flex-wrap: wrap;
+      }
+
+      .countdown-item {
+        background: rgba(30, 41, 59, 0.6);
+        border: 1px solid rgba(99, 102, 241, 0.2);
+        border-radius: 15px;
+        padding: 1.5rem;
+        min-width: 100px;
+        backdrop-filter: blur(10px);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .countdown-item::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.5s;
+      }
+
+      .countdown-item:hover::before {
+        left: 100%;
+      }
+
+      .countdown-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--brand), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+      }
+
+      .countdown-label {
+        font-size: 0.875rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      /* Progress Section */
+      .progress-section {
+        margin: 2rem 0;
+      }
+
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        color: var(--light);
+        font-weight: 600;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 8px;
+        background: rgba(30, 41, 59, 0.6);
+        border-radius: 4px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: var(--gradient);
+        border-radius: 4px;
+        width: 75%;
+        position: relative;
+        animation: progressPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes progressPulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+
+      .progress-fill::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        animation: progressShine 2s ease-in-out infinite;
+      }
+
+      @keyframes progressShine {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      /* Notify Form */
+      .notify-section {
+        margin: 2rem 0;
+      }
+
+      .notify-form {
+        display: flex;
+        gap: 1rem;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .notify-input {
+        flex: 1;
+        padding: 14px 16px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        background: rgba(255, 255, 255, 0.06);
+        color: var(--fg);
+        outline: none;
+        transition: border-color 0.2s ease, background 0.2s ease;
+        font-size: 1rem;
+      }
+
+      .notify-input::placeholder {
+        color: color-mix(in oklab, var(--muted) 80%, transparent);
+      }
+
+      .notify-input:focus {
+        border-color: color-mix(in oklab, var(--accent) 50%, transparent);
+        background: rgba(255, 255, 255, 0.09);
+      }
+
+      /* Buttons */
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 18px 0 6px;
+        justify-content: center;
+      }
+      .btn {
+        --p: var(--brand);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid color-mix(in oklab, var(--p) 40%, transparent);
+        padding: 12px 16px;
+        border-radius: 12px;
+        font-weight: 600;
+        color: var(--fg);
+        text-decoration: none;
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--p) 24%, transparent),
+          transparent
+        );
+        box-shadow: 0 6px 20px color-mix(in oklab, var(--p) 22%, transparent),
+          inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition: transform 0.18s ease, box-shadow 0.18s ease,
+          background 0.18s ease;
+        cursor: pointer;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 10px 28px color-mix(in oklab, var(--p) 30%, transparent);
+      }
+      .btn.secondary {
+        --p: var(--accent);
+      }
+      .btn.ghost {
+        --p: #ffffff22;
+        border-color: #ffffff22;
+        background: transparent;
+      }
+
+      .btn-notify {
+        --p: var(--brand);
+        padding: 14px 24px;
+        border-radius: 12px;
+        background: var(--gradient);
+        color: white;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-notify:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px
+          color-mix(in oklab, var(--brand) 40%, transparent);
+      }
+
+      /* Barra utility */
+      .util {
+        position: absolute;
+        inset: auto 16px 16px auto;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        z-index: 2;
+      }
+      .toggle,
+      .palette {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        user-select: none;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        background: rgba(255, 255, 255, 0.06);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        transition: transform 0.15s ease;
+      }
+      .toggle:hover,
+      .palette:hover {
+        transform: translateY(-1px);
+      }
+      .sr-only {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Footer mini */
+      .foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .links a {
+        color: var(--muted);
+        text-decoration: none;
+        border-bottom: 1px dashed transparent;
+      }
+      .links a:hover {
+        color: var(--fg);
+        border-bottom-color: var(--muted);
+      }
+
+      /* Blob decorativo */
+      .blob {
+        position: absolute;
+        width: 500px;
+        height: 500px;
+        border-radius: 40% 60% 50% 50% / 55% 45% 55% 45%;
+        background: radial-gradient(
+            circle at 30% 30%,
+            color-mix(in oklab, var(--brand) 40%, transparent),
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 70% 70%,
+            color-mix(in oklab, var(--accent) 40%, transparent),
+            transparent 60%
+          );
+        filter: blur(50px) saturate(140%);
+        opacity: 0.35;
+        z-index: 0;
+        pointer-events: none;
+        animation: morph 16s ease-in-out infinite alternate;
+      }
+      .blob.one {
+        top: -140px;
+        left: -120px;
+      }
+      .blob.two {
+        bottom: -160px;
+        right: -120px;
+        animation-duration: 20s;
+      }
+      @keyframes morph {
+        0% {
+          transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+        }
+        100% {
+          transform: translate3d(20px, -14px, 0) rotate(10deg) scale(1.06);
+        }
+      }
+
+      /* Feature List */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+
+      .feature-item {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--brand);
+        box-shadow: 0 10px 30px
+          color-mix(in oklab, var(--brand) 20%, transparent);
+      }
+
+      .feature-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .feature-title {
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--fg);
+      }
+
+      .feature-desc {
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      /* Riduzione animazioni */
+      @media (prefers-reduced-motion: reduce) {
+        .bg-gradient,
+        .noise,
+        .blob,
+        .coming-title,
+        .progress-fill::after,
+        .countdown-item::before {
+          animation: none !important;
+        }
+        canvas.starfield {
+          display: none;
+        }
+        .feature-item:hover {
+          transform: none;
+        }
+      }
+
+      /* Piccoli schermi */
+      @media (max-width: 768px) {
+        .countdown {
+          gap: 0.5rem;
+        }
+        .countdown-item {
+          min-width: 80px;
+          padding: 1rem;
+        }
+        .countdown-number {
+          font-size: 2rem;
+        }
+        .notify-form {
+          flex-direction: column;
+        }
+        .features {
+          grid-template-columns: 1fr;
+        }
+        .foot {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .coming-title {
+          font-size: 2.5rem;
+        }
+        .countdown-item {
+          min-width: 70px;
+          padding: 0.75rem;
+        }
+        .countdown-number {
+          font-size: 1.75rem;
+        }
+      }
+    </style>
+  </head>
+
+  <script>
+    if (
+      !sessionStorage.getItem("loadingShown") &&
+      !window.location.hash.includes("skip-loading")
+    ) {
+      window.location.href = "loading.html";
+      throw new Error("Redirecting to loading...");
+    }
+
+    // Clean up sau khi đã load xong
+    window.addEventListener("load", function () {
+      sessionStorage.setItem("loadingShown", true);
+    });
+  </script>
+  <body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+      <div class="app-icon youtube">
+        <i class="fab fa-youtube"></i>
+      </div>
+      <div class="app-icon spotify">
+        <i class="fab fa-spotify"></i>
+      </div>
+      <div class="app-icon tiktok">
+        <i class="fab fa-tiktok"></i>
+      </div>
+      <div class="app-icon soundcloud">
+        <i class="fab fa-soundcloud"></i>
+      </div>
+      <div class="app-icon netflix">
+        <i class="fas fa-film"></i>
+      </div>
+      <div class="app-icon discord">
+        <i class="fab fa-discord"></i>
+      </div>
+    </div>
+    <!-- Floating Ichos - Enhanced -->
+    <div class="floating-icons">
+      <i
+        class="floating-icon youtube fab fa-youtube"
+        data-tooltip="YouTube Premium"
+      ></i>
+      <i
+        class="floating-icon spotify fab fa-spotify"
+        data-tooltip="Spotify Premium"
+      ></i>
+      <i
+        class="floating-icon tiktok fab fa-tiktok"
+        data-tooltip="TikTok Premium"
+      ></i>
+      <i
+        class="floating-icon soundcloud fab fa-soundcloud"
+        data-tooltip="SoundCloud Premium"
+      ></i>
+      <i
+        class="floating-icon picsart fas fa-palette"
+        data-tooltip="PicsArt Gold"
+      ></i>
+      <i
+        class="floating-icon capcut fas fa-scissors"
+        data-tooltip="CapCut Pro"
+      ></i>
+      <i
+        class="floating-icon locket fas fa-lock"
+        data-tooltip="Locket Gold"
+      ></i>
+      <i
+        class="floating-icon bilibili fas fa-b"
+        data-tooltip="Bilibili No ADS"
+      ></i>
+
+      <!-- Thêm các icon phụ trợ -->
+      <i
+        class="floating-icon instagram fab fa-instagram"
+        data-tooltip="Instagram"
+      ></i>
+      <i
+        class="floating-icon twitter fab fa-twitter"
+        data-tooltip="Twitter"
+      ></i>
+      <i
+        class="floating-icon facebook fab fa-facebook"
+        data-tooltip="Facebook"
+      ></i>
+      <i
+        class="floating-icon whatsapp fab fa-whatsapp"
+        data-tooltip="WhatsApp"
+      ></i>
+      <i
+        class="floating-icon telegram fab fa-telegram"
+        data-tooltip="Telegram"
+      ></i>
+      <i
+        class="floating-icon discord fab fa-discord"
+        data-tooltip="Discord"
+      ></i>
+    </div>
+
+    <!-- Floating Icons -->
+    <div class="floating-icons">
+      <i
+        class="floating-icon youtube fab fa-youtube"
+        data-tooltip="YouTube Premium"
+      ></i>
+      <i
+        class="floating-icon spotify fab fa-spotify"
+        data-tooltip="Spotify Premium"
+      ></i>
+      <i
+        class="floating-icon tiktok fab fa-tiktok"
+        data-tooltip="TikTok Premium"
+      ></i>
+      <i
+        class="floating-icon soundcloud fab fa-soundcloud"
+        data-tooltip="SoundCloud Premium"
+      ></i>
+      <i
+        class="floating-icon picsart fas fa-palette"
+        data-tooltip="PicsArt Gold"
+      ></i>
+      <i
+        class="floating-icon capcut fas fa-scissors"
+        data-tooltip="CapCut Pro"
+      ></i>
+      <i
+        class="floating-icon locket fas fa-lock"
+        data-tooltip="Locket Gold"
+      ></i>
+    </div>
+
+    <canvas class="starfield" aria-hidden="true"></canvas>
+    <div class="bg-gradient" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <div class="wrap">
+      <div class="card" role="group" aria-label="Trang Coming Soon">
+        <div class="blob one" aria-hidden="true"></div>
+        <div class="blob two" aria-hidden="true"></div>
+
+        <div class="util">
+          <button
+            class="palette"
+            id="palette"
+            aria-label="Đổi bảng màu"
+            title="Đổi bảng màu"
+          >
+            🎨
+          </button>
+          <button
+            class="toggle"
+            id="theme"
+            aria-label="Đổi chế độ sáng/tối"
+            title="Chế độ sáng/tối"
+          >
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+
+        <div class="inner">
+          <h1 class="coming-title">Sắp Ra Mắt</h1>
+          <p class="subtitle">Điều tuyệt vời sắp đến!</p>
+          <p class="muted">
+            Chúng tôi đang làm việc chăm chỉ để mang đến cho bạn trải nghiệm
+            tuyệt vời nhất. Tính năng mới sẽ sớm được ra mắt.
+          </p>
+
+          <!-- Countdown Timer -->
+          <div class="countdown">
+            <div class="countdown-item">
+              <div class="countdown-number" id="days">00</div>
+              <div class="countdown-label">Ngày</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="hours">00</div>
+              <div class="countdown-label">Giờ</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="minutes">00</div>
+              <div class="countdown-label">Phút</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number" id="seconds">00</div>
+              <div class="countdown-label">Giây</div>
+            </div>
+          </div>
+
+          <!-- Progress Bar -->
+          <div class="progress-section">
+            <div class="progress-label">
+              <span>Tiến độ phát triển</span>
+              <span>75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill"></div>
+            </div>
+          </div>
+
+          <!-- Features Grid -->
+          <div class="features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <div class="feature-title">Hiệu suất cao</div>
+              <div class="feature-desc">
+                Tối ưu hóa cho tốc độ tải nhanh và trải nghiệm mượt mà
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="feature-title">Bảo mật nâng cao</div>
+              <div class="feature-desc">
+                Bảo vệ dữ liệu và quyền riêng tư của bạn
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <div class="feature-title">Responsive</div>
+              <div class="feature-desc">
+                Hoạt động hoàn hảo trên mọi thiết bị
+              </div>
+            </div>
+          </div>
+
+          <!-- Notify Form -->
+          <div class="notify-section">
+            <form class="notify-form" id="notifyForm">
+              <input
+                type="email"
+                class="notify-input"
+                placeholder="Nhập email để nhận thông báo..."
+                required
+              />
+              <button type="submit" class="btn-notify">
+                <i class="fas fa-bell"></i>
+                Thông báo cho tôi
+              </button>
+            </form>
+          </div>
+
+          <div class="actions">
+            <a class="btn" href="index.html" aria-label="Về trang chủ">
+              <i class="fas fa-home"></i> Trang chủ
+            </a>
+            <a
+              class="btn secondary"
+              href="modules.html"
+              aria-label="Khám phá modules"
+            >
+              <i class="fas fa-cube"></i> Modules
+            </a>
+            <button class="btn ghost" id="surprise" aria-label="Bất ngờ">
+              <i class="fas fa-magic"></i> Bất ngờ
+            </button>
+          </div>
+
+          <div class="foot" aria-label="Liên kết hữu ích">
+            <span>💡 Theo dõi chúng tôi để cập nhật sớm nhất</span>
+            <div class="links">
+              <a href="index.html">Trang chủ</a>
+              <a href="modules.html">Modules</a>
+              <a href="comingSoon.html">Hỗ trợ</a>
+              <a href="404.html">Liên hệ</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      /* ===== Starfield minimal ===== */
+      const canvas = document.querySelector("canvas.starfield");
+      const ctx = canvas.getContext("2d");
+      let stars = [],
+        W,
+        H,
+        mouse = { x: 0, y: 0 },
+        tick = 0;
+
+      function size() {
+        W = canvas.width = innerWidth;
+        H = canvas.height = innerHeight;
+      }
+      addEventListener("resize", size, { passive: true });
+      size();
+
+      function initStars(n = 140) {
+        stars = Array.from({ length: n }, () => ({
+          x: Math.random() * W,
+          y: Math.random() * H,
+          z: Math.random() * 1 + 0.2,
+          r: Math.random() * 1.2 + 0.2,
+          vx: (Math.random() - 0.5) * 0.2,
+          vy: (Math.random() - 0.5) * 0.2,
+        }));
+      }
+      initStars();
+
+      addEventListener(
+        "mousemove",
+        (e) => {
+          mouse.x = e.clientX;
+          mouse.y = e.clientY;
+        },
+        { passive: true }
+      );
+
+      function loop() {
+        tick++;
+        ctx.clearRect(0, 0, W, H);
+        for (const s of stars) {
+          const px = (mouse.x / W - 0.5) * 6 * s.z;
+          const py = (mouse.y / H - 0.5) * 6 * s.z;
+          s.x += s.vx + px * 0.002;
+          s.y += s.vy + py * 0.002;
+          if (s.x < -10) s.x = W + 10;
+          if (s.x > W + 10) s.x = -10;
+          if (s.y < -10) s.y = H + 10;
+          if (s.y > H + 10) s.y = -10;
+
+          const glow = 0.4 + Math.sin(tick / 30 + s.x) * 0.3;
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+          ctx.fillStyle = `hsla(${200 + s.z * 80}, 90%, ${70 + glow * 20}%, ${
+            0.45 + s.z * 0.3
+          })`;
+          ctx.fill();
+        }
+        requestAnimationFrame(loop);
+      }
+      requestAnimationFrame(loop);
+
+      /* ===== Countdown Timer ===== */
+      function updateCountdown() {
+        const launchDate = new Date("2024-12-31T23:59:59").getTime();
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("hours").textContent = hours
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes
+          .toString()
+          .padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds
+          .toString()
+          .padStart(2, "0");
+
+        if (distance < 0) {
+          clearInterval(countdownTimer);
+          document.querySelector(".countdown").innerHTML =
+            '<div class="countdown-item"><div class="countdown-number">🎉</div><div class="countdown-label">Đã ra mắt!</div></div>';
+        }
+      }
+
+      // Update countdown every second
+      updateCountdown();
+      const countdownTimer = setInterval(updateCountdown, 1000);
+
+      /* ===== Notify Form ===== */
+      document
+        .getElementById("notifyForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value.trim();
+
+          if (!email) {
+            toast("Vui lòng nhập địa chỉ email.");
+            return false;
+          }
+
+          const button = this.querySelector("button");
+          const originalText = button.innerHTML;
+
+          button.innerHTML =
+            '<i class="fas fa-spinner fa-spin"></i> Đang gửi...';
+          button.disabled = true;
+
+          // Simulate API call
+          setTimeout(() => {
+            button.innerHTML = '<i class="fas fa-check"></i> Đã gửi!';
+            toast("Cảm ơn! Chúng tôi sẽ thông báo cho bạn khi ra mắt.");
+            setTimeout(() => {
+              button.innerHTML = originalText;
+              button.disabled = false;
+              this.reset();
+            }, 2000);
+          }, 1500);
+
+          return false;
+        });
+
+      /* ===== Theme & palette ===== */
+      const themeBtn = document.getElementById("theme");
+      const palettes = [
+        "palette-aurora",
+        "palette-sunset",
+        "palette-forest",
+        "palette-ocean",
+      ];
+      const paletteBtn = document.getElementById("palette");
+
+      function setTheme(t) {
+        document.body.dataset.theme = t;
+        document.documentElement.style.colorScheme = t;
+        themeBtn.innerHTML =
+          t === "dark"
+            ? '<i class="fas fa-moon"></i>'
+            : '<i class="fas fa-sun"></i>';
+        localStorage.setItem("themeComingSoon", t);
+      }
+
+      function nextPalette() {
+        const cur = palettes.find((p) => document.body.classList.contains(p));
+        const idx = palettes.indexOf(cur);
+        document.body.classList.remove(cur);
+        const next = palettes[(idx + 1) % palettes.length];
+        document.body.classList.add(next);
+        localStorage.setItem("paletteComingSoon", next);
+        toast("Đã đổi bảng màu");
+      }
+
+      themeBtn.addEventListener("click", () =>
+        setTheme(document.body.dataset.theme === "dark" ? "light" : "dark")
+      );
+      paletteBtn.addEventListener("click", nextPalette);
+
+      // Load saved settings
+      (function () {
+        const t = localStorage.getItem("themeComingSoon");
+        if (t) setTheme(t);
+        const p = localStorage.getItem("paletteComingSoon");
+        if (p && palettes.includes(p)) {
+          document.body.classList.remove(...palettes);
+          document.body.classList.add(p);
+        }
+      })();
+
+      /* ===== Toast ===== */
+      let toastEl;
+      function toast(msg) {
+        if (!toastEl) {
+          toastEl = document.createElement("div");
+          Object.assign(toastEl.style, {
+            position: "fixed",
+            bottom: "18px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            background: "rgba(0,0,0,.6)",
+            color: "#fff",
+            padding: "10px 14px",
+            borderRadius: "10px",
+            backdropFilter: "blur(8px)",
+            border: "1px solid rgba(255,255,255,.15)",
+            zIndex: 1000,
+            fontSize: "14px",
+          });
+          document.body.appendChild(toastEl);
+        }
+        toastEl.textContent = msg;
+        toastEl.style.opacity = "0";
+        toastEl.style.transition = "opacity .15s ease";
+        requestAnimationFrame(() => (toastEl.style.opacity = "1"));
+        clearTimeout(toastEl._t);
+        toastEl._t = setTimeout(() => (toastEl.style.opacity = "0"), 2000);
+      }
+
+      /* ===== Surprise Effect ===== */
+      document.getElementById("surprise").addEventListener("click", () => {
+        const title = document.querySelector(".coming-title");
+        title.animate(
+          [
+            { transform: "scale(1)" },
+            { transform: "scale(1.1)" },
+            { transform: "scale(1)" },
+          ],
+          { duration: 500 }
+        );
+
+        confettiBurst();
+        toast("✨ Sắp có điều bất ngờ!");
+      });
+
+      function confettiBurst() {
+        const n = 20;
+        for (let i = 0; i < n; i++) {
+          const s = document.createElement("div");
+          s.textContent = ["🎉", "✨", "🌟", "🎊", "💫", "⚡", "🔥"][
+            Math.floor(Math.random() * 7)
+          ];
+          Object.assign(s.style, {
+            position: "fixed",
+            left: Math.random() * 100 + "vw",
+            top: "-10vh",
+            fontSize: Math.random() * 18 + 12 + "px",
+            transform: `rotate(${Math.random() * 360}deg)`,
+            zIndex: 999,
+            pointerEvents: "none",
+          });
+          document.body.appendChild(s);
+          const tx = Math.random() * 40 - 20 + "vw";
+          s.animate(
+            [
+              { transform: s.style.transform, top: "-10vh" },
+              {
+                transform: `translate(${tx},0) rotate(${
+                  Math.random() * 720 - 360
+                }deg)`,
+                top: "110vh",
+              },
+            ],
+            {
+              duration: 1500 + Math.random() * 800,
+              easing: "cubic-bezier(.2,.6,.2,1)",
+            }
+          ).onfinish = () => s.remove();
+        }
+      }
+
+      /* ===== Konami Code Easter Egg ===== */
+      const seq = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+      let pos = 0;
+      addEventListener("keydown", (e) => {
+        if (e.keyCode === seq[pos]) pos++;
+        else pos = e.keyCode === seq[0] ? 1 : 0;
+        if (pos === seq.length) {
+          pos = 0;
+          toast("🎮 Chế độ Turbo activated!");
+          turboMode();
+        }
+      });
+
+      function turboMode() {
+        document.querySelector(".progress-fill").style.width = "100%";
+        document.querySelector(".progress-label span:last-child").textContent =
+          "100%";
+
+        document
+          .querySelector(".card")
+          .animate(
+            [
+              { transform: "scale(1)" },
+              { transform: "scale(1.05)" },
+              { transform: "scale(1)" },
+            ],
+            { duration: 1000, iterations: 3 }
+          );
+
+        confettiBurst();
+      }
+
+      /* ===== Accessibility ===== */
+      document.addEventListener(
+        "keydown",
+        (e) => {
+          if (e.key === "Tab") {
+            document.documentElement.classList.add("show-focus");
+          }
+        },
+        { once: true }
+      );
+
+      const styleFocus = document.createElement("style");
+      styleFocus.textContent = `
+  .show-focus .btn:focus,
+  .show-focus .toggle:focus,
+  .show-focus .palette:focus,
+  .show-focus input:focus,
+  .show-focus .btn-notify:focus,
+  .show-focus .feature-item:focus {
+    outline: 2px solid var(--accent); 
+    outline-offset: 2px;
+  }
+`;
+      document.head.appendChild(styleFocus);
+    </script>
+
+    <script src="script/script.js"></script>
+  </body>
+</html>
