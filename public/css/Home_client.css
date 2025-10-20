@@ -1,0 +1,217 @@
+/* ===== RESET & BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Variables */
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #f59e0b;
+  --accent: #ec4899;
+  --success: #10b981;
+  --danger: #ef4444;
+  --dark: #1e293b;
+  --darker: #0f172a;
+  --light: #f8fafc;
+  --gray: #64748b;
+  --gray-light: #cbd5e1;
+
+  /* Effect Variables */
+  --shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+  --gradient-dark: linear-gradient(135deg, var(--darker), var(--dark));
+  
+  /* Font Variables */
+  --font-jetbrains: "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata",
+    "Fira Mono", "Droid Sans Mono", "Source Code Pro", monospace;
+}
+
+/* ===== BASE TYPOGRAPHY ===== */
+body {
+  font-family: var(--font-jetbrains);
+  font-optical-sizing: auto;
+  background: var(--gradient-dark);
+  color: var(--light);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+.animated-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+}
+
+.app-icon {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.1;
+  animation: float-icon 25s infinite linear;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+  transition: all 0.5s ease;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+/* App Icon Positions */
+.app-icon.youtube { top: 10%; left: 20%; color: #ff0000; animation-delay: 0s; animation-duration: 30s; }
+.app-icon.spotify { top: 60%; left: 80%; color: #1db954; animation-delay: -5s; animation-duration: 28s; }
+.app-icon.tiktok { top: 80%; left: 40%; color: #000000; animation-delay: -10s; animation-duration: 35s; }
+.app-icon.soundcloud { top: 30%; left: 60%; color: #ff5500; animation-delay: -15s; animation-duration: 32s; }
+.app-icon.picsart { top: 50%; left: 10%; color: #00a2ff; animation-delay: -20s; animation-duration: 27s; }
+.app-icon.capcut { top: 15%; left: 75%; color: #ff0050; animation-delay: -3s; animation-duration: 33s; }
+.app-icon.locket { top: 70%; left: 25%; color: #8b5cf6; animation-delay: -8s; animation-duration: 29s; }
+.app-icon.netflix { top: 35%; left: 85%; color: #e50914; animation-delay: -12s; animation-duration: 31s; }
+.app-icon.instagram { top: 85%; left: 65%; color: #e4405f; animation-delay: -18s; animation-duration: 34s; }
+.app-icon.discord { top: 25%; left: 15%; color: #5865f2; animation-delay: -22s; animation-duration: 26s; }
+
+/* App Icon Animations */
+@keyframes float-icon {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.1; }
+  25% { transform: translate(100px, 80px) rotate(90deg) scale(1.2); opacity: 0.15; }
+  50% { transform: translate(200px, -60px) rotate(180deg) scale(0.8); opacity: 0.08; }
+  75% { transform: translate(80px, -120px) rotate(270deg) scale(1.1); opacity: 0.12; }
+  100% { transform: translate(0, 0) rotate(360deg) scale(1); opacity: 0.1; }
+}
+
+.app-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: currentColor;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+  animation: icon-pulse 4s infinite ease-in-out;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { width: 0; height: 0; opacity: 0.1; }
+  50% { width: 60px; height: 60px; opacity: 0.05; }
+}
+
+/* Special Icon Effects */
+.app-icon.youtube::after,
+.app-icon.spotify::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0.1;
+  transform: translate(-50%, -50%);
+  animation: color-shift 3s infinite alternate;
+}
+
+.app-icon.youtube::after { background: linear-gradient(45deg, #ff0000, #cc0000); }
+.app-icon.spotify::after { background: linear-gradient(45deg, #1db954, #1ed760); }
+
+@keyframes color-shift {
+  0% { opacity: 0.05; }
+  100% { opacity: 0.15; }
+}
+
+/* ===== FLOATING ICONS ===== */
+.floating-icons {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.1;
+  animation: float-icon-simple 15s infinite ease-in-out;
+}
+
+/* Floating Icon Positions */
+.floating-icon.youtube { top: 15%; left: 5%; color: #ff0000; animation-delay: 0s; }
+.floating-icon.spotify { top: 25%; right: 10%; color: #1db954; animation-delay: -2s; }
+.floating-icon.tiktok { top: 70%; left: 8%; color: #000000; animation-delay: -4s; }
+.floating-icon.soundcloud { top: 45%; right: 5%; color: #ff5500; animation-delay: -6s; }
+.floating-icon.picsart { top: 85%; right: 15%; color: #00a2ff; animation-delay: -8s; }
+.floating-icon.capcut { top: 60%; right: 20%; color: #ff0050; animation-delay: -10s; }
+.floating-icon.locket { top: 30%; left: 15%; color: #8b5cf6; animation-delay: -12s; }
+.floating-icon.instagram { top: 15%; left: 60%; color: #e4405f; animation: float-instagram 33s infinite ease-in-out; }
+.floating-icon.twitter { top: 75%; left: 70%; color: #1da1f2; animation: float-twitter 29s infinite ease-in-out; }
+.floating-icon.facebook { top: 35%; left: 20%; color: #1877f2; animation: float-facebook 36s infinite ease-in-out; }
+.floating-icon.whatsapp { top: 55%; left: 30%; color: #25d366; animation: float-whatsapp 31s infinite ease-in-out; }
+.floating-icon.telegram { top: 25%; left: 40%; color: #0088cc; animation: float-telegram 34s infinite ease-in-out; }
+.floating-icon.discord { top: 65%; left: 50%; color: #5865f2; animation: float-discord 37s infinite ease-in-out; }
+
+@keyframes float-icon-simple {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(10deg); }
+}
+
+/* Custom Floating Animations */
+@keyframes float-instagram {
+  0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+  33% { transform: translate(150px, 100px) rotate(120deg); }
+  66% { transform: translate(-100px, 150px) rotate(240deg); }
+}
+
+@keyframes float-twitter {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-200px) scale(1.2); }
+}
+
+@keyframes float-facebook {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(120px, 80px); }
+  50% { transform: translate(240px, -60px); }
+  75% { transform: translate(120px, -120px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+@keyframes float-whatsapp {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(90deg); }
+  50% { transform: scale(0.9) rotate(180deg); }
+  75% { transform: scale(1.2) rotate(270deg); }
+}
+
+@keyframes float-telegram {
+  0% { transform: translateX(0px) skew(0deg); }
+  50% { transform: translateX(200px) skew(20deg); }
+  100% { transform: translateX(0px) skew(0deg); }
+}
+
+@keyframes float-discord {
+  0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+  25% { transform: translate(100px, 150px) rotate(90deg); }
+  50% { transform: translate(200px, 50px) rotate(180deg); }
+  75% { transform: translate(100px, -100px) rotate(270deg); }
+}
+
+/* Animation Performance */
+.app-icon:nth-child(odd) {
+  animation-timing-function: ease-in-out;
+}
+
+.app-icon:nth-child(even) {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
